@@ -12,7 +12,8 @@
       "Input/Output fast I/O (`ios_base::sync_with_stdio`)"
     ],
     "practice": "LC 1 (Two Sum - brute), LC 66 (Plus One), LC 189 (Rotate Array), LC 283 (Move Zeroes)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "I am learning DSA in C++ from scratch. Teach me today's topics in full depth, one by one, with a clear explanation, at least one real-world analogy, a working C++ code example for each, and time/space complexity analysis. Topics for today:\n- Time & Space Complexity, Big-O, Big-Theta, Big-Omega\n- Pass by value vs reference, Pointers, Structures in C++\n- STL vector, pair, array\n- STL string and stringstream\n- Fast I/O in C++ (ios_base::sync_with_stdio)\nAfter explaining, give me a step-by-step approach and C++ solution with dry run for these LeetCode problems: 1 (Two Sum), 66 (Plus One), 189 (Rotate Array), 283 (Move Zeroes)."
   },
   {
     "day": 2,
@@ -29,7 +30,8 @@
       "`sort()`, custom comparators, `lambda` functions"
     ],
     "practice": "LC 1046 (Last Stone Weight), LC 350 (Intersection of Two Arrays II), LC 242 (Valid Anagram)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Teach me C++ STL in depth for DSA with code examples for each container's key operations (insertion, deletion, traversal, time complexity):\n- pair, tuple\n- stack, queue, deque\n- priority_queue (min-heap and max-heap, custom comparator)\n- set, multiset, unordered_set\n- map, multimap, unordered_map\n- Iterators, auto keyword, range-based for loops\n- sort() with custom comparators and lambda functions\nThen give me detailed C++ solutions with explanation for LeetCode 1046 (Last Stone Weight), 350 (Intersection of Two Arrays II), 242 (Valid Anagram)."
   },
   {
     "day": 3,
@@ -46,7 +48,8 @@
       "Check power of 2, single number problems"
     ],
     "practice": "LC 231 (Power of Two), LC 191 (Number of 1 Bits), LC 136 (Single Number), LC 137 (Single Number II), LC 260 (Single Number III), LC 50 (Pow(x,n)), LC 204 (Count Primes)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Explain the following Math and Bit Manipulation topics for DSA in C++, each with intuition, formula/derivation where relevant, and a C++ code snippet:\n- GCD/LCM using Euclidean Algorithm\n- Sieve of Eratosthenes\n- Prime factorization of a number\n- Modular arithmetic and Fast/Binary Exponentiation\n- Bitwise operators: AND, OR, XOR, NOT, Left/Right Shift\n- Counting set bits using Brian Kernighan's Algorithm\n- Checking power of 2 using bits\nThen solve with full explanation: LeetCode 231 (Power of Two), 191 (Number of 1 Bits), 136 (Single Number), 137 (Single Number II), 260 (Single Number III), 50 (Pow(x,n)), 204 (Count Primes)."
   },
   {
     "day": 4,
@@ -63,7 +66,8 @@
       "Majority Element (Moore's Voting)"
     ],
     "practice": "LC 53 (Max Subarray), LC 121 (Best Time to Buy/Sell Stock), LC 122 (Best Time II), LC 15 (3Sum), LC 16 (3Sum Closest), LC 18 (4Sum), LC 11 (Container With Most Water), LC 75 (Sort Colors), LC 169 (Majority Element), LC 229 (Majority Element II), LC 238 (Product of Array Except Self), LC 41 (First Missing Positive), LC 128 (Longest Consecutive Sequence), LC 152 (Maximum Product Subarray), LC 560 (Subarray Sum Equals K)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Teach me core Array techniques in C++ in depth, one at a time, with examples and code:\n- Prefix Sum technique\n- Kadane's Algorithm (Maximum Subarray)\n- Two Pointer technique\n- Sliding Window (fixed size and variable size) with examples of each\n- Dutch National Flag algorithm\n- Array rotation using the Reversal algorithm\n- Majority Element using Moore's Voting Algorithm\nFor each technique explain WHEN to use it (pattern recognition) and WHY it works. Then give detailed C++ solutions with dry runs for: LeetCode 53, 121, 122, 15, 16, 18, 11, 75, 169, 229, 238, 41, 128, 152, 560."
   },
   {
     "day": 6,
@@ -78,7 +82,8 @@
       "Search in 2D Matrix"
     ],
     "practice": "LC 48 (Rotate Image), LC 54 (Spiral Matrix), LC 73 (Set Matrix Zeroes), LC 74 (Search a 2D Matrix), LC 240 (Search 2D Matrix II), LC 130 (Surrounded Regions)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Explain 2D Array / Matrix techniques in C++ with diagrams-in-text and code:\n- Matrix traversal patterns: spiral order and diagonal traversal\n- In-place matrix rotation (90 degrees)\n- Matrix transpose\n- Set Matrix Zeroes technique (O(1) space approach)\n- Efficient search in a sorted 2D matrix\nThen solve in detail with C++ code: LeetCode 48 (Rotate Image), 54 (Spiral Matrix), 73 (Set Matrix Zeroes), 74 (Search a 2D Matrix), 240 (Search a 2D Matrix II), 130 (Surrounded Regions)."
   },
   {
     "day": 7,
@@ -93,7 +98,8 @@
       "String to Integer (atoi)"
     ],
     "practice": "LC 5 (Longest Palindromic Substring), LC 3 (Longest Substring Without Repeating Characters), LC 49 (Group Anagrams), LC 14 (Longest Common Prefix), LC 8 (String to Integer atoi), LC 28 (Find Index of First Occurrence - KMP), LC 43 (Multiply Strings), LC 6 (Zigzag Conversion), LC 767 (Reorganize String), LC 187 (Repeated DNA Sequences)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Teach me String algorithms for DSA in C++ with detailed explanation and code:\n- Naive Pattern Matching, KMP Algorithm (with LPS array construction explained step by step), Rabin-Karp concept\n- Anagram checking techniques\n- Palindrome checking techniques\n- String reversal techniques (in-place and using extra space)\n- Longest Common Prefix approaches\n- String to Integer (atoi) implementation from scratch\nThen solve with full C++ code and explanation: LeetCode 5, 3, 49, 14, 8, 28, 43, 6, 767, 187."
   },
   {
     "day": 8,
@@ -108,7 +114,8 @@
       "Order-statistics / Kth element"
     ],
     "practice": "LC 704 (Binary Search), LC 33 (Search in Rotated Sorted Array), LC 81 (Search in Rotated Sorted Array II), LC 34 (Find First and Last Position), LC 153 (Find Minimum in Rotated Sorted Array), LC 4 (Median of Two Sorted Arrays), LC 74 (Search a 2D Matrix), LC 1011 (Capacity To Ship Packages), LC 875 (Koko Eating Bananas), LC 410 (Split Array Largest Sum)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Teach me Binary Search in full depth in C++, covering:\n- Standard iterative and recursive Binary Search\n- Binary Search on Answer / Search Space Reduction pattern (explain how to identify these problems)\n- Finding Lower Bound and Upper Bound\n- Searching in Rotated Sorted Arrays (with and without duplicates)\n- Kth element / order statistics using binary search\nExplain the general template for \"Binary Search on Answer\" problems with a worked example. Then solve with C++ code: LeetCode 704, 33, 81, 34, 153, 4 (Median of Two Sorted Arrays — explain intuition fully), 1011, 875, 410."
   },
   {
     "day": 9,
@@ -122,7 +129,8 @@
       "Counting Sort, Radix Sort, Bucket Sort concepts"
     ],
     "practice": "LC 912 (Sort an Array), LC 148 (Sort List), LC 215 (Kth Largest Element - Quickselect), LC 493 (Reverse Pairs), LC 56 (Merge Intervals), LC 57 (Insert Interval), LC 452 (Minimum Arrows to Burst Balloons)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Explain all major Sorting algorithms in C++ with code, dry run, and time/space complexity table comparing them all at the end:\n- Bubble Sort, Selection Sort, Insertion Sort\n- Merge Sort (also show how to count inversions using merge sort)\n- Quick Sort (also explain Quickselect for Kth largest/smallest)\n- Counting Sort, Radix Sort, Bucket Sort (concept level with example)\nThen solve with C++ code: LeetCode 912, 148, 215, 493, 56, 57, 452."
   },
   {
     "day": 10,
@@ -137,7 +145,8 @@
       "N-Queens (intro)"
     ],
     "practice": "LC 78 (Subsets), LC 90 (Subsets II), LC 46 (Permutations), LC 47 (Permutations II), LC 39 (Combination Sum), LC 40 (Combination Sum II), LC 77 (Combinations), LC 22 (Generate Parentheses)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Teach me Recursion and Backtracking fundamentals in C++:\n- How recursion works internally (call stack, recursion tree diagram in text)\n- Generating Subsets / Subsequences (with and without duplicates)\n- Generating Permutations (with and without duplicates)\n- Combination Sum pattern (allow reuse vs no reuse)\n- Brief intro to N-Queens as a backtracking problem\nExplain the backtracking template (choose, explore, un-choose) clearly. Then solve with full C++ code: LeetCode 78, 90, 46, 47, 39, 40, 77, 22."
   },
   {
     "day": 11,
@@ -152,7 +161,8 @@
       "Palindrome Partitioning"
     ],
     "practice": "LC 51 (N-Queens), LC 52 (N-Queens II), LC 37 (Sudoku Solver), LC 79 (Word Search), LC 131 (Palindrome Partitioning), LC 17 (Letter Combinations of Phone Number), LC 93 (Restore IP Addresses)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Teach me advanced Backtracking problems in C++ with full explanation, decision tree reasoning, and code:\n- N-Queens full solution with pruning\n- Sudoku Solver\n- Rat in a Maze\n- Word Search on a grid\n- Palindrome Partitioning\nExplain how to identify time complexity of backtracking solutions. Then solve with C++ code: LeetCode 51, 52, 37, 79, 131, 17, 93."
   },
   {
     "day": 12,
@@ -167,7 +177,8 @@
       "Find middle of linked list"
     ],
     "practice": "LC 206 (Reverse Linked List), LC 141 (Linked List Cycle), LC 142 (Linked List Cycle II), LC 876 (Middle of the Linked List), LC 21 (Merge Two Sorted Lists), LC 83 (Remove Duplicates from Sorted List), LC 19 (Remove Nth Node From End)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Teach me Linked List fundamentals in C++ with node structure code and diagrams-in-text:\n- Singly Linked List: insertion, deletion, traversal (all cases: head, middle, tail)\n- Doubly Linked List basics\n- Reversing a Linked List (iterative and recursive)\n- Detecting a cycle using Floyd's Cycle Detection (Tortoise and Hare)\n- Finding the middle of a linked list (slow-fast pointer)\nThen solve with full C++ code: LeetCode 206, 141, 142, 876, 21, 83, 19."
   },
   {
     "day": 13,
@@ -183,7 +194,8 @@
       "Intersection of Two Linked Lists"
     ],
     "practice": "LC 23 (Merge k Sorted Lists), LC 2 (Add Two Numbers), LC 143 (Reorder List), LC 138 (Copy List with Random Pointer), LC 25 (Reverse Nodes in k-Group), LC 160 (Intersection of Two Linked Lists), LC 234 (Palindrome Linked List)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Teach me advanced Linked List problems in C++ with detailed explanation and code:\n- Merging K Sorted Linked Lists (multiple approaches: brute force, heap-based, divide and conquer)\n- Add Two Numbers represented as linked lists\n- Reordering a Linked List\n- Copying a Linked List with Random Pointers\n- Reversing Nodes in groups of K\n- Finding Intersection Point of Two Linked Lists\n- Checking if a Linked List is a Palindrome\nThen solve with full C++ code: LeetCode 23, 2, 143, 138, 25, 160, 234."
   },
   {
     "day": 14,
@@ -199,7 +211,8 @@
       "Monotonic stack pattern"
     ],
     "practice": "LC 20 (Valid Parentheses), LC 155 (Min Stack), LC 496 (Next Greater Element I), LC 503 (Next Greater Element II), LC 739 (Daily Temperatures), LC 84 (Largest Rectangle in Histogram), LC 42 (Trapping Rain Water), LC 232 (Implement Queue using Stacks), LC 225 (Implement Stack using Queues)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Teach me Stack and Queue concepts in C++ in depth:\n- Implementing Stack and Queue using array and linked list from scratch\n- Implementing a Stack using Queue and a Queue using Stack\n- Next Greater Element / Next Smaller Element pattern using Monotonic Stack\n- Min Stack design (O(1) getMin)\n- Valid Parentheses / Balanced Brackets checking\n- Explain the Monotonic Stack pattern in general and how to recognize when to use it\nThen solve with full C++ code: LeetCode 20, 155, 496, 503, 739, 84, 42, 232, 225."
   },
   {
     "day": 15,
@@ -214,7 +227,8 @@
       "Balanced Binary Tree check"
     ],
     "practice": "LC 144, 94, 145 (Traversals), LC 102 (Level Order), LC 104 (Max Depth), LC 543 (Diameter of Binary Tree), LC 110 (Balanced Binary Tree), LC 100 (Same Tree), LC 226 (Invert Binary Tree), LC 101 (Symmetric Tree)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Teach me Binary Tree basics in C++ in depth with a tree node structure and diagrams-in-text:\n- Preorder, Inorder, Postorder traversal (recursive and iterative using stack)\n- Level Order Traversal (BFS using queue)\n- Height and Diameter of a Binary Tree\n- Checking if a Binary Tree is height-balanced\n- Comparing trees (Same Tree), Inverting a Binary Tree, Symmetric Tree check\nThen solve with full C++ code: LeetCode 144, 94, 145, 102, 104, 543, 110, 100, 226, 101."
   },
   {
     "day": 16,
@@ -230,7 +244,8 @@
       "Construct Tree from Traversals"
     ],
     "practice": "LC 103 (Zigzag Traversal), LC 199 (Right Side View), LC 236 (LCA of Binary Tree), LC 112 (Path Sum), LC 113 (Path Sum II), LC 124 (Binary Tree Max Path Sum), LC 105 (Construct from Preorder+Inorder), LC 662 (Max Width of Binary Tree)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Teach me advanced Binary Tree problems in C++ with detailed explanation and code:\n- Zigzag Level Order Traversal\n- Top View, Bottom View, Left View, Right View of a Binary Tree\n- Boundary Traversal of a Binary Tree\n- Lowest Common Ancestor (LCA) in a Binary Tree\n- Path Sum problems (I and II)\n- Maximum Path Sum in a Binary Tree\n- Constructing a Binary Tree from Preorder and Inorder traversal\nThen solve with full C++ code: LeetCode 103, 199, 236, 112, 113, 124, 105, 662."
   },
   {
     "day": 17,
@@ -246,7 +261,8 @@
       "Construct BST from Preorder"
     ],
     "practice": "LC 98 (Validate BST), LC 230 (Kth Smallest in BST), LC 235 (LCA of BST), LC 108 (Convert Sorted Array to BST), LC 450 (Delete Node in BST), LC 700 (Search in BST), LC 173 (BST Iterator), LC 99 (Recover BST)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Teach me Binary Search Tree (BST) concepts in C++ in depth:\n- BST insertion, deletion, and search operations with code\n- Validating a Binary Search Tree\n- Finding Kth Smallest and Kth Largest element in a BST\n- Converting a BST to a sorted array (inorder traversal property)\n- Lowest Common Ancestor in a BST (optimized approach vs binary tree approach)\n- Constructing a BST from Preorder traversal\nThen solve with full C++ code: LeetCode 98, 230, 235, 108, 450, 700, 173, 99."
   },
   {
     "day": 18,
@@ -262,7 +278,8 @@
       "Median in a stream (two heaps)"
     ],
     "practice": "LC 215 (Kth Largest Element), LC 347 (Top K Frequent Elements), LC 23 (Merge k Sorted Lists), LC 295 (Find Median from Data Stream), LC 973 (K Closest Points to Origin), LC 621 (Task Scheduler), LC 1046 (Last Stone Weight)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Teach me Heap / Priority Queue concepts in C++ in depth:\n- How a Min-Heap and Max-Heap work internally (heapify, build heap operations)\n- Finding Kth Largest/Smallest element using heap\n- Top K Frequent Elements problem\n- Merging K Sorted Arrays/Lists using heap\n- Finding median in a stream of numbers using two heaps\nThen solve with full C++ code using STL priority_queue: LeetCode 215, 347, 23, 295, 973, 621, 1046."
   },
   {
     "day": 19,
@@ -275,7 +292,8 @@
       "Prefix-based problems"
     ],
     "practice": "LC 208 (Implement Trie), LC 211 (Design Add and Search Words), LC 212 (Word Search II), LC 648 (Replace Words), LC 676 (Implement Magic Dictionary)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Teach me Trie (Prefix Tree) data structure in C++ in depth:\n- Trie node structure and how insert/search/startsWith work internally\n- Implementing a Trie from scratch in C++\n- Solving prefix-based search problems using Trie\n- Word Search II using Trie + backtracking on a grid\nThen solve with full C++ code: LeetCode 208, 211, 212, 648, 676."
   },
   {
     "day": 20,
@@ -290,7 +308,8 @@
       "Bipartite Graph Check"
     ],
     "practice": "LC 200 (Number of Islands), LC 133 (Clone Graph), LC 207 (Course Schedule), LC 210 (Course Schedule II), LC 785 (Is Graph Bipartite), LC 994 (Rotting Oranges), LC 130 (Surrounded Regions), LC 733 (Flood Fill)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Teach me Graph fundamentals in C++ in depth:\n- Graph representation: Adjacency List and Adjacency Matrix (with code)\n- BFS and DFS traversal (recursive and iterative) with code\n- Finding Connected Components in a graph\n- Cycle Detection in Directed Graphs and Undirected Graphs (both BFS and DFS based approaches)\n- Checking if a Graph is Bipartite\nThen solve with full C++ code: LeetCode 200, 133, 207, 210, 785, 994, 130, 733."
   },
   {
     "day": 21,
@@ -306,7 +325,8 @@
       "Disjoint Set Union (Union-Find) with path compression"
     ],
     "practice": "LC 210 (Course Schedule II), LC 743 (Network Delay Time), LC 787 (Cheapest Flights Within K Stops), LC 1584 (Min Cost to Connect All Points), LC 684 (Redundant Connection), LC 1319 (Number of Operations to Connect Network), LC 1631 (Path With Minimum Effort), LC 542 (01 Matrix)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Teach me advanced Graph algorithms in C++ in full depth with step-by-step dry runs:\n- Topological Sort (Kahn's Algorithm using BFS, and DFS-based approach)\n- Dijkstra's Algorithm for shortest path (using priority_queue)\n- Bellman-Ford Algorithm (and how it detects negative weight cycles)\n- Floyd-Warshall Algorithm for all-pairs shortest path\n- Minimum Spanning Tree: Prim's Algorithm and Kruskal's Algorithm\n- Disjoint Set Union (Union-Find) with Path Compression and Union by Rank/Size\nThen solve with full C++ code: LeetCode 210, 743, 787, 1584, 684, 1319, 1631, 542."
   },
   {
     "day": 22,
@@ -320,7 +340,8 @@
       "House Robber pattern"
     ],
     "practice": "LC 70 (Climbing Stairs), LC 198 (House Robber), LC 213 (House Robber II), LC 91 (Decode Ways), LC 62 (Unique Paths), LC 63 (Unique Paths II), LC 279 (Perfect Squares), LC 322 (Coin Change), LC 518 (Coin Change II)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Teach me Dynamic Programming from the basics in C++:\n- Difference between Memoization (Top-Down) and Tabulation (Bottom-Up) with code examples of both for the same problem\n- Fibonacci-style DP\n- Climbing Stairs pattern\n- House Robber pattern (linear DP)\nExplain how to identify a DP problem and how to define the state and transition. Then solve with full C++ code (both memoization and tabulation): LeetCode 70, 198, 213, 91, 62, 63, 279, 322, 518."
   },
   {
     "day": 23,
@@ -334,7 +355,8 @@
       "Matrix Chain Multiplication concept"
     ],
     "practice": "LC 1143 (LCS), LC 300 (LIS), LC 72 (Edit Distance), LC 583 (Delete Operation for Two Strings), LC 97 (Interleaving String), LC 115 (Distinct Subsequences), LC 1035 (Uncrossed Lines), LC 673 (Number of LIS)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Teach me 2D Dynamic Programming and Subsequence DP patterns in C++ in depth:\n- Longest Common Subsequence (LCS) with full DP table dry run\n- Longest Increasing Subsequence (LIS) - both O(n^2) and O(n log n) approaches\n- Edit Distance\n- Matrix Chain Multiplication concept (interval DP intro)\nThen solve with full C++ code and DP table walkthroughs: LeetCode 1143, 300, 72, 583, 97, 115, 1035, 673."
   },
   {
     "day": 24,
@@ -349,7 +371,8 @@
       "Target Sum"
     ],
     "practice": "LC 416 (Partition Equal Subset Sum), LC 494 (Target Sum), LC 474 (Ones and Zeroes), LC 1049 (Last Stone Weight II), LC 139 (Word Break), LC 377 (Combination Sum IV)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Teach me the Knapsack DP pattern in C++ in full depth:\n- 0/1 Knapsack (with DP table dry run)\n- Unbounded Knapsack\n- Subset Sum problem\n- Partition Equal Subset Sum\n- Target Sum problem (relate it back to subset sum)\nExplain how to recognize a Knapsack-pattern problem. Then solve with full C++ code: LeetCode 416, 494, 474, 1049, 139, 377."
   },
   {
     "day": 25,
@@ -363,7 +386,8 @@
       "Burst Balloons pattern"
     ],
     "practice": "LC 123 (Best Time to Buy/Sell Stock III), LC 188 (Best Time IV), LC 309 (Stock with Cooldown), LC 714 (Stock with Transaction Fee), LC 647 (Palindromic Substrings), LC 132 (Palindrome Partitioning II), LC 312 (Burst Balloons), LC 96 (Unique BSTs)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Teach me these advanced Dynamic Programming patterns in C++ with detailed explanation and code:\n- Buy/Sell Stock DP variations (with cooldown, with transaction fee, at most K transactions)\n- Palindromic Substrings DP approach\n- Matrix Chain Multiplication / Interval DP pattern\n- Burst Balloons problem (why reversing the interval DP thinking is needed)\nThen solve with full C++ code: LeetCode 123, 188, 309, 714, 647, 132, 312, 96."
   },
   {
     "day": 26,
@@ -378,7 +402,8 @@
       "Gas Station problem"
     ],
     "practice": "LC 55 (Jump Game), LC 45 (Jump Game II), LC 435 (Non-overlapping Intervals), LC 452 (Minimum Arrows), LC 763 (Partition Labels), LC 134 (Gas Station), LC 860 (Lemonade Change), LC 402 (Remove K Digits), LC 738 (Monotone Increasing Digits)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Teach me Greedy Algorithms in C++ in depth, and explain how to prove/justify a greedy choice is correct:\n- Activity Selection Problem\n- Interval Scheduling\n- Fractional Knapsack\n- Job Sequencing Problem\n- Gas Station problem\nThen solve with full C++ code: LeetCode 55, 45, 435, 452, 763, 134, 860, 402, 738."
   },
   {
     "day": 27,
@@ -392,7 +417,8 @@
       "Sparse Table (concept for RMQ)"
     ],
     "practice": "LC 307 (Range Sum Query - Mutable), LC 315 (Count of Smaller Numbers After Self), LC 146 (LRU Cache), LC 460 (LFU Cache), LC 218 (The Skyline Problem)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Teach me these Advanced Data Structures in C++ in full depth with code implementation from scratch:\n- Segment Tree (build, range query, point update) with a worked example\n- Binary Indexed Tree / Fenwick Tree (build, update, prefix sum query)\n- LRU Cache design (using unordered_map + doubly linked list)\n- LFU Cache design\n- Sparse Table concept for Range Minimum Query\nThen solve with full C++ code: LeetCode 307, 315, 146, 460, 218."
   },
   {
     "day": 28,
@@ -406,7 +432,8 @@
       "Subarray/Substring counting with constraints"
     ],
     "practice": "LC 76 (Minimum Window Substring), LC 3 (Longest Substring Without Repeating Chars), LC 424 (Longest Repeating Character Replacement), LC 567 (Permutation in String), LC 209 (Minimum Size Subarray Sum), LC 992 (Subarrays with K Different Integers), LC 904 (Fruit Into Baskets)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Teach me advanced Sliding Window and Two Pointer problems in C++ in depth:\n- Longest Substring with K Distinct Characters\n- Minimum Window Substring (explain the shrink/expand window logic clearly)\n- Fruit Into Baskets pattern\n- Counting subarrays/substrings with exact constraints (e.g. \"exactly K\" using \"at most K - at most K-1\" trick)\nThen solve with full C++ code: LeetCode 76, 3, 424, 567, 209, 992, 904."
   },
   {
     "day": 29,
@@ -417,7 +444,8 @@
       "Mix of Array + DP + Graph + Tree hard-level problems"
     ],
     "practice": "LC 84 (Largest Rectangle in Histogram), LC 42 (Trapping Rain Water), LC 32 (Longest Valid Parentheses), LC 4 (Median of Two Sorted Arrays), LC 76 (Minimum Window Substring), LC 124 (Binary Tree Max Path Sum), LC 200 (Number of Islands), LC 322 (Coin Change), LC 45 (Jump Game II), LC 295 (Find Median from Data Stream)",
-    "isProject": false
+    "isProject": false,
+    "prompt": "I have covered Arrays, Strings, Linked List, Stacks/Queues, Trees, Graphs, DP, Greedy, Heaps, and Tries over the past 28 days in C++. Give me a mixed hard-level revision session: for each of the following LeetCode problems, ask me to first think about the approach, then give me a hint, then the full C++ solution with explanation only after the hint: LeetCode 84, 42, 32, 4, 76, 124, 200, 322, 45, 295.\nAlso quiz me on time/space complexity of each of my solutions."
   },
   {
     "day": 30,
@@ -446,9 +474,153 @@
       "[ ] Greedy",
       "[ ] Segment Tree / Fenwick Tree",
       "[ ] Sliding Window / Two Pointers",
-      "[ ] Final Revision"
+      "[ ] Final Revision",
+      "Time & Space Complexity, Big-O, Big-Theta, Big-Omega",
+      "Pass by value vs reference, Pointers, Structures in C++",
+      "STL vector, pair, array",
+      "STL string and stringstream",
+      "Fast I/O in C++ (ios_base::sync_with_stdio)",
+      "pair, tuple",
+      "stack, queue, deque",
+      "priority_queue (min-heap and max-heap, custom comparator)",
+      "set, multiset, unordered_set",
+      "map, multimap, unordered_map",
+      "Iterators, auto keyword, range-based for loops",
+      "sort() with custom comparators and lambda functions",
+      "GCD/LCM using Euclidean Algorithm",
+      "Sieve of Eratosthenes",
+      "Prime factorization of a number",
+      "Modular arithmetic and Fast/Binary Exponentiation",
+      "Bitwise operators: AND, OR, XOR, NOT, Left/Right Shift",
+      "Counting set bits using Brian Kernighan's Algorithm",
+      "Checking power of 2 using bits",
+      "Prefix Sum technique",
+      "Kadane's Algorithm (Maximum Subarray)",
+      "Two Pointer technique",
+      "Sliding Window (fixed size and variable size) with examples of each",
+      "Dutch National Flag algorithm",
+      "Array rotation using the Reversal algorithm",
+      "Majority Element using Moore's Voting Algorithm",
+      "Matrix traversal patterns: spiral order and diagonal traversal",
+      "In-place matrix rotation (90 degrees)",
+      "Matrix transpose",
+      "Set Matrix Zeroes technique (O(1) space approach)",
+      "Efficient search in a sorted 2D matrix",
+      "Naive Pattern Matching, KMP Algorithm (with LPS array construction explained step by step), Rabin-Karp concept",
+      "Anagram checking techniques",
+      "Palindrome checking techniques",
+      "String reversal techniques (in-place and using extra space)",
+      "Longest Common Prefix approaches",
+      "String to Integer (atoi) implementation from scratch",
+      "Standard iterative and recursive Binary Search",
+      "Binary Search on Answer / Search Space Reduction pattern (explain how to identify these problems)",
+      "Finding Lower Bound and Upper Bound",
+      "Searching in Rotated Sorted Arrays (with and without duplicates)",
+      "Kth element / order statistics using binary search",
+      "Bubble Sort, Selection Sort, Insertion Sort",
+      "Merge Sort (also show how to count inversions using merge sort)",
+      "Quick Sort (also explain Quickselect for Kth largest/smallest)",
+      "Counting Sort, Radix Sort, Bucket Sort (concept level with example)",
+      "How recursion works internally (call stack, recursion tree diagram in text)",
+      "Generating Subsets / Subsequences (with and without duplicates)",
+      "Generating Permutations (with and without duplicates)",
+      "Combination Sum pattern (allow reuse vs no reuse)",
+      "Brief intro to N-Queens as a backtracking problem",
+      "N-Queens full solution with pruning",
+      "Sudoku Solver",
+      "Rat in a Maze",
+      "Word Search on a grid",
+      "Palindrome Partitioning",
+      "Singly Linked List: insertion, deletion, traversal (all cases: head, middle, tail)",
+      "Doubly Linked List basics",
+      "Reversing a Linked List (iterative and recursive)",
+      "Detecting a cycle using Floyd's Cycle Detection (Tortoise and Hare)",
+      "Finding the middle of a linked list (slow-fast pointer)",
+      "Merging K Sorted Linked Lists (multiple approaches: brute force, heap-based, divide and conquer)",
+      "Add Two Numbers represented as linked lists",
+      "Reordering a Linked List",
+      "Copying a Linked List with Random Pointers",
+      "Reversing Nodes in groups of K",
+      "Finding Intersection Point of Two Linked Lists",
+      "Checking if a Linked List is a Palindrome",
+      "Implementing Stack and Queue using array and linked list from scratch",
+      "Implementing a Stack using Queue and a Queue using Stack",
+      "Next Greater Element / Next Smaller Element pattern using Monotonic Stack",
+      "Min Stack design (O(1) getMin)",
+      "Valid Parentheses / Balanced Brackets checking",
+      "Explain the Monotonic Stack pattern in general and how to recognize when to use it",
+      "Preorder, Inorder, Postorder traversal (recursive and iterative using stack)",
+      "Level Order Traversal (BFS using queue)",
+      "Height and Diameter of a Binary Tree",
+      "Checking if a Binary Tree is height-balanced",
+      "Comparing trees (Same Tree), Inverting a Binary Tree, Symmetric Tree check",
+      "Zigzag Level Order Traversal",
+      "Top View, Bottom View, Left View, Right View of a Binary Tree",
+      "Boundary Traversal of a Binary Tree",
+      "Lowest Common Ancestor (LCA) in a Binary Tree",
+      "Path Sum problems (I and II)",
+      "Maximum Path Sum in a Binary Tree",
+      "Constructing a Binary Tree from Preorder and Inorder traversal",
+      "BST insertion, deletion, and search operations with code",
+      "Validating a Binary Search Tree",
+      "Finding Kth Smallest and Kth Largest element in a BST",
+      "Converting a BST to a sorted array (inorder traversal property)",
+      "Lowest Common Ancestor in a BST (optimized approach vs binary tree approach)",
+      "Constructing a BST from Preorder traversal",
+      "How a Min-Heap and Max-Heap work internally (heapify, build heap operations)",
+      "Finding Kth Largest/Smallest element using heap",
+      "Top K Frequent Elements problem",
+      "Merging K Sorted Arrays/Lists using heap",
+      "Finding median in a stream of numbers using two heaps",
+      "Trie node structure and how insert/search/startsWith work internally",
+      "Implementing a Trie from scratch in C++",
+      "Solving prefix-based search problems using Trie",
+      "Word Search II using Trie + backtracking on a grid",
+      "Graph representation: Adjacency List and Adjacency Matrix (with code)",
+      "BFS and DFS traversal (recursive and iterative) with code",
+      "Finding Connected Components in a graph",
+      "Cycle Detection in Directed Graphs and Undirected Graphs (both BFS and DFS based approaches)",
+      "Checking if a Graph is Bipartite",
+      "Topological Sort (Kahn's Algorithm using BFS, and DFS-based approach)",
+      "Dijkstra's Algorithm for shortest path (using priority_queue)",
+      "Bellman-Ford Algorithm (and how it detects negative weight cycles)",
+      "Floyd-Warshall Algorithm for all-pairs shortest path",
+      "Minimum Spanning Tree: Prim's Algorithm and Kruskal's Algorithm",
+      "Disjoint Set Union (Union-Find) with Path Compression and Union by Rank/Size",
+      "Difference between Memoization (Top-Down) and Tabulation (Bottom-Up) with code examples of both for the same problem",
+      "Fibonacci-style DP",
+      "Climbing Stairs pattern",
+      "House Robber pattern (linear DP)",
+      "Longest Common Subsequence (LCS) with full DP table dry run",
+      "Longest Increasing Subsequence (LIS) - both O(n^2) and O(n log n) approaches",
+      "Edit Distance",
+      "Matrix Chain Multiplication concept (interval DP intro)",
+      "0/1 Knapsack (with DP table dry run)",
+      "Unbounded Knapsack",
+      "Subset Sum problem",
+      "Partition Equal Subset Sum",
+      "Target Sum problem (relate it back to subset sum)",
+      "Buy/Sell Stock DP variations (with cooldown, with transaction fee, at most K transactions)",
+      "Palindromic Substrings DP approach",
+      "Matrix Chain Multiplication / Interval DP pattern",
+      "Burst Balloons problem (why reversing the interval DP thinking is needed)",
+      "Activity Selection Problem",
+      "Interval Scheduling",
+      "Fractional Knapsack",
+      "Job Sequencing Problem",
+      "Gas Station problem",
+      "Segment Tree (build, range query, point update) with a worked example",
+      "Binary Indexed Tree / Fenwick Tree (build, update, prefix sum query)",
+      "LRU Cache design (using unordered_map + doubly linked list)",
+      "LFU Cache design",
+      "Sparse Table concept for Range Minimum Query",
+      "Longest Substring with K Distinct Characters",
+      "Minimum Window Substring (explain the shrink/expand window logic clearly)",
+      "Fruit Into Baskets pattern",
+      "Counting subarrays/substrings with exact constraints (e.g. \"exactly K\" using \"at most K - at most K-1\" trick)"
     ],
     "practice": "",
-    "isProject": false
+    "isProject": false,
+    "prompt": "Act as my technical interviewer. I have completed a 30-day DSA course in C++ covering STL, Arrays, Strings, Searching/Sorting, Recursion/Backtracking, Linked List, Stack/Queue, Trees, BST, Heaps, Trie, Graphs, DP, Greedy, and Advanced Data Structures. Conduct two 45-minute mock interviews with me: each should have 2 problems of mixed difficulty (easy-medium and medium-hard) drawn from these topics, presented one at a time without giving the answer first. Wait for my approach, then give feedback on my approach before I code it, then review my final C++ code for correctness, edge cases, and complexity. At the end, summarize my weak topics based on how I performed."
   }
 ]

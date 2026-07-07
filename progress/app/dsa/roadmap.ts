@@ -8,6 +8,7 @@ export type Day = {
   topics: string[];
   practice: string;
   isProject: boolean;
+  prompt?: string;
 };
 
 export type Week = {

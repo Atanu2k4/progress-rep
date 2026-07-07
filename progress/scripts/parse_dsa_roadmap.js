@@ -111,6 +111,28 @@ for (let i = 1; i <= 5; i++) {
   }
 }
 
+// Parse Prompts
+const promptsMatch = markdown.match(/### Day \d+.*Prompt\s+```[\s\S]*?```/g);
+if (promptsMatch) {
+  promptsMatch.forEach(block => {
+    const headerMatch = block.match(/### Day (\d+)(?:-(\d+))? Prompt/);
+    if (headerMatch) {
+      const startDay = parseInt(headerMatch[1], 10);
+      const endDay = headerMatch[2] ? parseInt(headerMatch[2], 10) : startDay;
+      const promptTextMatch = block.match(/```\n([\s\S]*?)\n```/);
+      if (promptTextMatch) {
+        const prompt = promptTextMatch[1].trim();
+        for (let d = startDay; d <= endDay; d++) {
+          const dayData = roadmap.find(r => r.day === d);
+          if (dayData) {
+            dayData.prompt = prompt;
+          }
+        }
+      }
+    }
+  });
+}
+
 const outputPath = path.resolve(__dirname, '../data/dsa-roadmap.json');
 fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 fs.writeFileSync(outputPath, JSON.stringify(roadmap, null, 2));

@@ -258,3 +258,328 @@
 - [ ] Final Revision
 
 **Total Problems Covered: ~180+ LeetCode problems across every core DSA topic.**
+
+---
+---
+
+# AI PROMPTS — One Per Day (Copy-Paste into any AI chat)
+
+> Paste the full prompt for that day into ChatGPT/Claude/Gemini/etc. Each prompt is self-contained — it tells the AI your exact topic list, forces detailed explanation, examples, C++ code, and complexity analysis, and ties it back to the relevant LeetCode problems.
+
+---
+
+### Day 1 Prompt
+```
+I am learning DSA in C++ from scratch. Teach me today's topics in full depth, one by one, with a clear explanation, at least one real-world analogy, a working C++ code example for each, and time/space complexity analysis. Topics for today:
+- Time & Space Complexity, Big-O, Big-Theta, Big-Omega
+- Pass by value vs reference, Pointers, Structures in C++
+- STL vector, pair, array
+- STL string and stringstream
+- Fast I/O in C++ (ios_base::sync_with_stdio)
+After explaining, give me a step-by-step approach and C++ solution with dry run for these LeetCode problems: 1 (Two Sum), 66 (Plus One), 189 (Rotate Array), 283 (Move Zeroes).
+```
+
+### Day 2 Prompt
+```
+Teach me C++ STL in depth for DSA with code examples for each container's key operations (insertion, deletion, traversal, time complexity):
+- pair, tuple
+- stack, queue, deque
+- priority_queue (min-heap and max-heap, custom comparator)
+- set, multiset, unordered_set
+- map, multimap, unordered_map
+- Iterators, auto keyword, range-based for loops
+- sort() with custom comparators and lambda functions
+Then give me detailed C++ solutions with explanation for LeetCode 1046 (Last Stone Weight), 350 (Intersection of Two Arrays II), 242 (Valid Anagram).
+```
+
+### Day 3 Prompt
+```
+Explain the following Math and Bit Manipulation topics for DSA in C++, each with intuition, formula/derivation where relevant, and a C++ code snippet:
+- GCD/LCM using Euclidean Algorithm
+- Sieve of Eratosthenes
+- Prime factorization of a number
+- Modular arithmetic and Fast/Binary Exponentiation
+- Bitwise operators: AND, OR, XOR, NOT, Left/Right Shift
+- Counting set bits using Brian Kernighan's Algorithm
+- Checking power of 2 using bits
+Then solve with full explanation: LeetCode 231 (Power of Two), 191 (Number of 1 Bits), 136 (Single Number), 137 (Single Number II), 260 (Single Number III), 50 (Pow(x,n)), 204 (Count Primes).
+```
+
+### Day 4-5 Prompt
+```
+Teach me core Array techniques in C++ in depth, one at a time, with examples and code:
+- Prefix Sum technique
+- Kadane's Algorithm (Maximum Subarray)
+- Two Pointer technique
+- Sliding Window (fixed size and variable size) with examples of each
+- Dutch National Flag algorithm
+- Array rotation using the Reversal algorithm
+- Majority Element using Moore's Voting Algorithm
+For each technique explain WHEN to use it (pattern recognition) and WHY it works. Then give detailed C++ solutions with dry runs for: LeetCode 53, 121, 122, 15, 16, 18, 11, 75, 169, 229, 238, 41, 128, 152, 560.
+```
+
+### Day 6 Prompt
+```
+Explain 2D Array / Matrix techniques in C++ with diagrams-in-text and code:
+- Matrix traversal patterns: spiral order and diagonal traversal
+- In-place matrix rotation (90 degrees)
+- Matrix transpose
+- Set Matrix Zeroes technique (O(1) space approach)
+- Efficient search in a sorted 2D matrix
+Then solve in detail with C++ code: LeetCode 48 (Rotate Image), 54 (Spiral Matrix), 73 (Set Matrix Zeroes), 74 (Search a 2D Matrix), 240 (Search a 2D Matrix II), 130 (Surrounded Regions).
+```
+
+### Day 7 Prompt
+```
+Teach me String algorithms for DSA in C++ with detailed explanation and code:
+- Naive Pattern Matching, KMP Algorithm (with LPS array construction explained step by step), Rabin-Karp concept
+- Anagram checking techniques
+- Palindrome checking techniques
+- String reversal techniques (in-place and using extra space)
+- Longest Common Prefix approaches
+- String to Integer (atoi) implementation from scratch
+Then solve with full C++ code and explanation: LeetCode 5, 3, 49, 14, 8, 28, 43, 6, 767, 187.
+```
+
+### Day 8 Prompt
+```
+Teach me Binary Search in full depth in C++, covering:
+- Standard iterative and recursive Binary Search
+- Binary Search on Answer / Search Space Reduction pattern (explain how to identify these problems)
+- Finding Lower Bound and Upper Bound
+- Searching in Rotated Sorted Arrays (with and without duplicates)
+- Kth element / order statistics using binary search
+Explain the general template for "Binary Search on Answer" problems with a worked example. Then solve with C++ code: LeetCode 704, 33, 81, 34, 153, 4 (Median of Two Sorted Arrays — explain intuition fully), 1011, 875, 410.
+```
+
+### Day 9 Prompt
+```
+Explain all major Sorting algorithms in C++ with code, dry run, and time/space complexity table comparing them all at the end:
+- Bubble Sort, Selection Sort, Insertion Sort
+- Merge Sort (also show how to count inversions using merge sort)
+- Quick Sort (also explain Quickselect for Kth largest/smallest)
+- Counting Sort, Radix Sort, Bucket Sort (concept level with example)
+Then solve with C++ code: LeetCode 912, 148, 215, 493, 56, 57, 452.
+```
+
+### Day 10 Prompt
+```
+Teach me Recursion and Backtracking fundamentals in C++:
+- How recursion works internally (call stack, recursion tree diagram in text)
+- Generating Subsets / Subsequences (with and without duplicates)
+- Generating Permutations (with and without duplicates)
+- Combination Sum pattern (allow reuse vs no reuse)
+- Brief intro to N-Queens as a backtracking problem
+Explain the backtracking template (choose, explore, un-choose) clearly. Then solve with full C++ code: LeetCode 78, 90, 46, 47, 39, 40, 77, 22.
+```
+
+### Day 11 Prompt
+```
+Teach me advanced Backtracking problems in C++ with full explanation, decision tree reasoning, and code:
+- N-Queens full solution with pruning
+- Sudoku Solver
+- Rat in a Maze
+- Word Search on a grid
+- Palindrome Partitioning
+Explain how to identify time complexity of backtracking solutions. Then solve with C++ code: LeetCode 51, 52, 37, 79, 131, 17, 93.
+```
+
+### Day 12 Prompt
+```
+Teach me Linked List fundamentals in C++ with node structure code and diagrams-in-text:
+- Singly Linked List: insertion, deletion, traversal (all cases: head, middle, tail)
+- Doubly Linked List basics
+- Reversing a Linked List (iterative and recursive)
+- Detecting a cycle using Floyd's Cycle Detection (Tortoise and Hare)
+- Finding the middle of a linked list (slow-fast pointer)
+Then solve with full C++ code: LeetCode 206, 141, 142, 876, 21, 83, 19.
+```
+
+### Day 13 Prompt
+```
+Teach me advanced Linked List problems in C++ with detailed explanation and code:
+- Merging K Sorted Linked Lists (multiple approaches: brute force, heap-based, divide and conquer)
+- Add Two Numbers represented as linked lists
+- Reordering a Linked List
+- Copying a Linked List with Random Pointers
+- Reversing Nodes in groups of K
+- Finding Intersection Point of Two Linked Lists
+- Checking if a Linked List is a Palindrome
+Then solve with full C++ code: LeetCode 23, 2, 143, 138, 25, 160, 234.
+```
+
+### Day 14 Prompt
+```
+Teach me Stack and Queue concepts in C++ in depth:
+- Implementing Stack and Queue using array and linked list from scratch
+- Implementing a Stack using Queue and a Queue using Stack
+- Next Greater Element / Next Smaller Element pattern using Monotonic Stack
+- Min Stack design (O(1) getMin)
+- Valid Parentheses / Balanced Brackets checking
+- Explain the Monotonic Stack pattern in general and how to recognize when to use it
+Then solve with full C++ code: LeetCode 20, 155, 496, 503, 739, 84, 42, 232, 225.
+```
+
+### Day 15 Prompt
+```
+Teach me Binary Tree basics in C++ in depth with a tree node structure and diagrams-in-text:
+- Preorder, Inorder, Postorder traversal (recursive and iterative using stack)
+- Level Order Traversal (BFS using queue)
+- Height and Diameter of a Binary Tree
+- Checking if a Binary Tree is height-balanced
+- Comparing trees (Same Tree), Inverting a Binary Tree, Symmetric Tree check
+Then solve with full C++ code: LeetCode 144, 94, 145, 102, 104, 543, 110, 100, 226, 101.
+```
+
+### Day 16 Prompt
+```
+Teach me advanced Binary Tree problems in C++ with detailed explanation and code:
+- Zigzag Level Order Traversal
+- Top View, Bottom View, Left View, Right View of a Binary Tree
+- Boundary Traversal of a Binary Tree
+- Lowest Common Ancestor (LCA) in a Binary Tree
+- Path Sum problems (I and II)
+- Maximum Path Sum in a Binary Tree
+- Constructing a Binary Tree from Preorder and Inorder traversal
+Then solve with full C++ code: LeetCode 103, 199, 236, 112, 113, 124, 105, 662.
+```
+
+### Day 17 Prompt
+```
+Teach me Binary Search Tree (BST) concepts in C++ in depth:
+- BST insertion, deletion, and search operations with code
+- Validating a Binary Search Tree
+- Finding Kth Smallest and Kth Largest element in a BST
+- Converting a BST to a sorted array (inorder traversal property)
+- Lowest Common Ancestor in a BST (optimized approach vs binary tree approach)
+- Constructing a BST from Preorder traversal
+Then solve with full C++ code: LeetCode 98, 230, 235, 108, 450, 700, 173, 99.
+```
+
+### Day 18 Prompt
+```
+Teach me Heap / Priority Queue concepts in C++ in depth:
+- How a Min-Heap and Max-Heap work internally (heapify, build heap operations)
+- Finding Kth Largest/Smallest element using heap
+- Top K Frequent Elements problem
+- Merging K Sorted Arrays/Lists using heap
+- Finding median in a stream of numbers using two heaps
+Then solve with full C++ code using STL priority_queue: LeetCode 215, 347, 23, 295, 973, 621, 1046.
+```
+
+### Day 19 Prompt
+```
+Teach me Trie (Prefix Tree) data structure in C++ in depth:
+- Trie node structure and how insert/search/startsWith work internally
+- Implementing a Trie from scratch in C++
+- Solving prefix-based search problems using Trie
+- Word Search II using Trie + backtracking on a grid
+Then solve with full C++ code: LeetCode 208, 211, 212, 648, 676.
+```
+
+### Day 20 Prompt
+```
+Teach me Graph fundamentals in C++ in depth:
+- Graph representation: Adjacency List and Adjacency Matrix (with code)
+- BFS and DFS traversal (recursive and iterative) with code
+- Finding Connected Components in a graph
+- Cycle Detection in Directed Graphs and Undirected Graphs (both BFS and DFS based approaches)
+- Checking if a Graph is Bipartite
+Then solve with full C++ code: LeetCode 200, 133, 207, 210, 785, 994, 130, 733.
+```
+
+### Day 21 Prompt
+```
+Teach me advanced Graph algorithms in C++ in full depth with step-by-step dry runs:
+- Topological Sort (Kahn's Algorithm using BFS, and DFS-based approach)
+- Dijkstra's Algorithm for shortest path (using priority_queue)
+- Bellman-Ford Algorithm (and how it detects negative weight cycles)
+- Floyd-Warshall Algorithm for all-pairs shortest path
+- Minimum Spanning Tree: Prim's Algorithm and Kruskal's Algorithm
+- Disjoint Set Union (Union-Find) with Path Compression and Union by Rank/Size
+Then solve with full C++ code: LeetCode 210, 743, 787, 1584, 684, 1319, 1631, 542.
+```
+
+### Day 22 Prompt
+```
+Teach me Dynamic Programming from the basics in C++:
+- Difference between Memoization (Top-Down) and Tabulation (Bottom-Up) with code examples of both for the same problem
+- Fibonacci-style DP
+- Climbing Stairs pattern
+- House Robber pattern (linear DP)
+Explain how to identify a DP problem and how to define the state and transition. Then solve with full C++ code (both memoization and tabulation): LeetCode 70, 198, 213, 91, 62, 63, 279, 322, 518.
+```
+
+### Day 23 Prompt
+```
+Teach me 2D Dynamic Programming and Subsequence DP patterns in C++ in depth:
+- Longest Common Subsequence (LCS) with full DP table dry run
+- Longest Increasing Subsequence (LIS) - both O(n^2) and O(n log n) approaches
+- Edit Distance
+- Matrix Chain Multiplication concept (interval DP intro)
+Then solve with full C++ code and DP table walkthroughs: LeetCode 1143, 300, 72, 583, 97, 115, 1035, 673.
+```
+
+### Day 24 Prompt
+```
+Teach me the Knapsack DP pattern in C++ in full depth:
+- 0/1 Knapsack (with DP table dry run)
+- Unbounded Knapsack
+- Subset Sum problem
+- Partition Equal Subset Sum
+- Target Sum problem (relate it back to subset sum)
+Explain how to recognize a Knapsack-pattern problem. Then solve with full C++ code: LeetCode 416, 494, 474, 1049, 139, 377.
+```
+
+### Day 25 Prompt
+```
+Teach me these advanced Dynamic Programming patterns in C++ with detailed explanation and code:
+- Buy/Sell Stock DP variations (with cooldown, with transaction fee, at most K transactions)
+- Palindromic Substrings DP approach
+- Matrix Chain Multiplication / Interval DP pattern
+- Burst Balloons problem (why reversing the interval DP thinking is needed)
+Then solve with full C++ code: LeetCode 123, 188, 309, 714, 647, 132, 312, 96.
+```
+
+### Day 26 Prompt
+```
+Teach me Greedy Algorithms in C++ in depth, and explain how to prove/justify a greedy choice is correct:
+- Activity Selection Problem
+- Interval Scheduling
+- Fractional Knapsack
+- Job Sequencing Problem
+- Gas Station problem
+Then solve with full C++ code: LeetCode 55, 45, 435, 452, 763, 134, 860, 402, 738.
+```
+
+### Day 27 Prompt
+```
+Teach me these Advanced Data Structures in C++ in full depth with code implementation from scratch:
+- Segment Tree (build, range query, point update) with a worked example
+- Binary Indexed Tree / Fenwick Tree (build, update, prefix sum query)
+- LRU Cache design (using unordered_map + doubly linked list)
+- LFU Cache design
+- Sparse Table concept for Range Minimum Query
+Then solve with full C++ code: LeetCode 307, 315, 146, 460, 218.
+```
+
+### Day 28 Prompt
+```
+Teach me advanced Sliding Window and Two Pointer problems in C++ in depth:
+- Longest Substring with K Distinct Characters
+- Minimum Window Substring (explain the shrink/expand window logic clearly)
+- Fruit Into Baskets pattern
+- Counting subarrays/substrings with exact constraints (e.g. "exactly K" using "at most K - at most K-1" trick)
+Then solve with full C++ code: LeetCode 76, 3, 424, 567, 209, 992, 904.
+```
+
+### Day 29 Prompt
+```
+I have covered Arrays, Strings, Linked List, Stacks/Queues, Trees, Graphs, DP, Greedy, Heaps, and Tries over the past 28 days in C++. Give me a mixed hard-level revision session: for each of the following LeetCode problems, ask me to first think about the approach, then give me a hint, then the full C++ solution with explanation only after the hint: LeetCode 84, 42, 32, 4, 76, 124, 200, 322, 45, 295.
+Also quiz me on time/space complexity of each of my solutions.
+```
+
+### Day 30 Prompt
+```
+Act as my technical interviewer. I have completed a 30-day DSA course in C++ covering STL, Arrays, Strings, Searching/Sorting, Recursion/Backtracking, Linked List, Stack/Queue, Trees, BST, Heaps, Trie, Graphs, DP, Greedy, and Advanced Data Structures. Conduct two 45-minute mock interviews with me: each should have 2 problems of mixed difficulty (easy-medium and medium-hard) drawn from these topics, presented one at a time without giving the answer first. Wait for my approach, then give feedback on my approach before I code it, then review my final C++ code for correctness, edge cases, and complexity. At the end, summarize my weak topics based on how I performed.
+```

@@ -17,6 +17,7 @@ export default function Home() {
   const [done, setDone] = useState<Set<number>>(new Set());
   const [loaded, setLoaded] = useState(false);
   const [toast, setToast] = useState<{ text: string; kind: "day" | "project" | "week" } | null>(null);
+  const [activePrompt, setActivePrompt] = useState<{ day: number; text: string } | null>(null);
 
   // Load persisted progress once.
   useEffect(() => {
@@ -83,7 +84,7 @@ export default function Home() {
 
       <div className="mt-16 flex flex-col gap-10">
         {WEEKS.map((week) => (
-          <WeekSection key={week.weekNumber} week={week} done={done} onToggle={toggle} />
+          <WeekSection key={week.weekNumber} week={week} done={done} onToggle={toggle} onShowPrompt={(day, text) => setActivePrompt({ day, text })} />
         ))}
       </div>
 
@@ -92,6 +93,14 @@ export default function Home() {
       </footer>
 
       {toast && <Toast text={toast.text} kind={toast.kind} />}
+      
+      {activePrompt && (
+        <PromptModal 
+          day={activePrompt.day} 
+          text={activePrompt.text} 
+          onClose={() => setActivePrompt(null)} 
+        />
+      )}
     </div>
   );
 }
@@ -139,10 +148,12 @@ function WeekSection({
   week,
   done,
   onToggle,
+  onShowPrompt,
 }: {
   week: Week;
   done: Set<number>;
   onToggle: (day: Day, week: Week) => void;
+  onShowPrompt: (day: number, text: string) => void;
 }) {
   const [expanded, setExpanded] = useState(false);
   
@@ -195,9 +206,9 @@ function WeekSection({
         <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
           {week.days.map((d) =>
             d.isProject ? (
-              <ProjectCard key={d.day} day={d} week={week} checked={done.has(d.day)} onToggle={onToggle} />
+              <ProjectCard key={d.day} day={d} week={week} checked={done.has(d.day)} onToggle={onToggle} onShowPrompt={onShowPrompt} />
             ) : (
-              <DayCard key={d.day} day={d} week={week} checked={done.has(d.day)} onToggle={onToggle} />
+              <DayCard key={d.day} day={d} week={week} checked={done.has(d.day)} onToggle={onToggle} onShowPrompt={onShowPrompt} />
             )
           )}
         </div>
@@ -211,16 +222,18 @@ function DayCard({
   week,
   checked,
   onToggle,
+  onShowPrompt,
 }: {
   day: Day;
   week: Week;
   checked: boolean;
   onToggle: (day: Day, week: Week) => void;
+  onShowPrompt: (day: number, text: string) => void;
 }) {
   return (
-    <button
+    <div
       onClick={() => onToggle(day, week)}
-      className={`group relative flex flex-col items-start gap-3 border-4 border-black p-5 text-left transition-all duration-200 
+      className={`group cursor-pointer relative flex flex-col items-start gap-3 border-4 border-black p-5 text-left transition-all duration-200 
         hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#14110d] dark:hover:shadow-[8px_8px_0_0_rgba(255,255,255,0.2)] hover:-rotate-1 active:translate-y-1 active:shadow-none
         ${checked ? "bg-[#e8f5e9] text-black opacity-90 shadow-none translate-y-1" : "bg-white text-black shadow-[4px_4px_0_0_#14110d] dark:shadow-[4px_4px_0_0_rgba(255,255,255,0.2)]"}
       `}
@@ -261,8 +274,19 @@ function DayCard({
             ))}
           </div>
         )}
+        {day.prompt && (
+          <button 
+            onClick={(e) => {
+              e.stopPropagation();
+              onShowPrompt(day.day, day.prompt!);
+            }}
+            className="mt-4 border-2 border-black bg-[#c084fc] px-3 py-1 text-sm font-black uppercase tracking-wide text-black shadow-[2px_2px_0_0_#14110d] transition-transform hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_#14110d] active:translate-y-0 active:shadow-none"
+          >
+            Prompt
+          </button>
+        )}
       </div>
-    </button>
+    </div>
   );
 }
 
@@ -271,16 +295,18 @@ function ProjectCard({
   week,
   checked,
   onToggle,
+  onShowPrompt,
 }: {
   day: Day;
   week: Week;
   checked: boolean;
   onToggle: (day: Day, week: Week) => void;
+  onShowPrompt: (day: number, text: string) => void;
 }) {
   return (
-    <button
+    <div
       onClick={() => onToggle(day, week)}
-      className={`relative col-span-1 flex flex-col gap-4 border-4 p-6 text-left sm:col-span-2 transition-all duration-200
+      className={`relative cursor-pointer col-span-1 flex flex-col gap-4 border-4 p-6 text-left sm:col-span-2 transition-all duration-200
         hover:-translate-y-2 hover:-rotate-1 active:translate-y-1 active:shadow-none
         ${checked ? "bg-[#14110d] text-white border-white shadow-none translate-y-1" : "bg-[#ffd93d] border-black text-black shadow-[8px_8px_0_0_#14110d] dark:shadow-[8px_8px_0_0_rgba(255,255,255,0.2)]"}
       `}
@@ -321,8 +347,19 @@ function ProjectCard({
             🎯 Goal: {day.practice}
           </div>
         )}
+        {day.prompt && (
+          <button 
+            onClick={(e) => {
+              e.stopPropagation();
+              onShowPrompt(day.day, day.prompt!);
+            }}
+            className="mt-4 inline-block border-4 border-black bg-[#c084fc] px-4 py-2 text-base font-black uppercase tracking-wide text-black shadow-[4px_4px_0_0_#14110d] transition-transform hover:-translate-y-1 hover:shadow-[6px_6px_0_0_#14110d] active:translate-y-0 active:shadow-none"
+          >
+            Prompt
+          </button>
+        )}
       </div>
-    </button>
+    </div>
   );
 }
 
@@ -351,6 +388,63 @@ function Toast({ text, kind }: { text: string; kind: "day" | "project" | "week" 
         style={{ background: bg, color: '#14110d' }}
       >
         {text}
+      </div>
+    </div>
+  );
+}
+
+function PromptModal({ day, text, onClose }: { day: number; text: string; onClose: () => void }) {
+  // Prevent clicks inside modal from closing it
+  const handleContentClick = (e: React.MouseEvent) => e.stopPropagation();
+
+  // Copy to clipboard
+  const [copied, setCopied] = useState(false);
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div 
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <div 
+        className="relative flex max-h-[90vh] w-full max-w-3xl flex-col border-4 border-black bg-white shadow-[8px_8px_0_0_#14110d] dark:shadow-[8px_8px_0_0_rgba(255,255,255,0.2)]"
+        onClick={handleContentClick}
+      >
+        <div className="flex items-center justify-between border-b-4 border-black bg-[#ff90e8] px-4 py-3 sm:px-6">
+          <h2 className="text-xl font-black uppercase tracking-tight text-black sm:text-2xl">
+            AI Prompt — Day {day}
+          </h2>
+          <button 
+            onClick={onClose}
+            className="flex h-8 w-8 items-center justify-center border-2 border-black bg-white text-xl font-black text-black shadow-[2px_2px_0_0_#14110d] transition-transform hover:-translate-y-0.5 active:translate-y-0 active:shadow-none"
+          >
+            ✕
+          </button>
+        </div>
+        
+        <div className="flex-1 overflow-y-auto p-4 sm:p-6 bg-[#f4f1e8] text-black">
+          <p className="mb-4 text-sm font-bold opacity-80">
+            Copy and paste this prompt into ChatGPT, Claude, or Gemini to learn today's concepts.
+          </p>
+          <div className="relative border-4 border-black bg-white p-4">
+            <pre className="whitespace-pre-wrap font-mono text-sm leading-relaxed sm:text-base">
+              {text}
+            </pre>
+          </div>
+        </div>
+
+        <div className="border-t-4 border-black bg-white p-4 sm:px-6 sm:py-4">
+          <button
+            onClick={copyToClipboard}
+            className="w-full border-4 border-black bg-[#7bf1a8] px-4 py-3 text-lg font-black uppercase tracking-wide text-black shadow-[4px_4px_0_0_#14110d] transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0_0_#14110d] active:translate-y-0 active:shadow-none"
+          >
+            {copied ? "Copied! 🚀" : "Copy to Clipboard"}
+          </button>
+        </div>
       </div>
     </div>
   );
