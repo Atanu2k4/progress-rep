@@ -35,67 +35,72 @@ export default function Home() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-200 h-150 bg-rose-500/20 blur-[120px] rounded-full opacity-50"></div>
       </div>
 
-      {/* Navigation */}
-      <nav className="w-full flex items-center justify-between px-6 py-6 max-w-7xl mx-auto z-50 border-b border-white/5">
-        <div className="flex items-center gap-2 flex-1">
-          <div className="w-6 h-6 border-2 border-white rounded-1 flex items-center justify-center">
-             <div className="w-2 h-2 bg-rose-500 rounded-[1px]"></div>
+      {/* First Screen Container */}
+      <div className="min-h-screen flex flex-col">
+        {/* Navigation */}
+        <nav className="w-full flex items-center justify-between px-6 py-6 max-w-7xl mx-auto z-50 border-b border-white/5">
+          <div className="flex items-center gap-2 flex-1">
+            <div className="w-6 h-6 border-2 border-white rounded-1 flex items-center justify-center">
+               <div className="w-2 h-2 bg-rose-500 rounded-[1px]"></div>
+            </div>
+            <span className="font-bold text-sm tracking-widest uppercase text-white">PORTLINE</span>
           </div>
-          <span className="font-bold text-sm tracking-widest uppercase text-white">PORTLINE</span>
-        </div>
-        <div className="hidden md:flex items-center justify-center gap-8 text-sm font-medium text-zinc-400">
-          <a href="#features" className="hover:text-white transition-colors">Platform</a>
-          <a href="#roadmaps" className="hover:text-white transition-colors">Roadmaps</a>
-          <a href="#community" className="hover:text-white transition-colors">Community</a>
-        </div>
-        <div className="flex items-center justify-end gap-4 flex-1">
-          <Link
-            href="/login"
-            className="text-sm font-medium text-zinc-300 hover:text-white transition-colors hidden md:block"
-          >
-            Log in
-          </Link>
-          <Link
-            href="/login"
-            className="px-4 py-2 text-sm font-medium bg-white text-black rounded-full hover:bg-zinc-200 transition-colors inline-flex items-center gap-2"
-          >
-            Start learning
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-      </nav>
+          <div className="hidden md:flex items-center justify-center gap-8 text-sm font-medium text-zinc-400">
+            <a href="#features" className="hover:text-white transition-colors">Platform</a>
+            <a href="#roadmaps" className="hover:text-white transition-colors">Roadmaps</a>
+            <a href="#community" className="hover:text-white transition-colors">Community</a>
+          </div>
+          <div className="flex items-center justify-end gap-4 flex-1">
+            <Link
+              href="/login"
+              className="text-sm font-medium text-zinc-300 hover:text-white transition-colors hidden md:block"
+            >
+              Log in
+            </Link>
+            <Link
+              href="/login"
+              className="px-4 py-2 text-sm font-medium bg-white text-black rounded-full hover:bg-zinc-200 transition-colors inline-flex items-center gap-2"
+            >
+              Start learning
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </nav>
 
-      {/* Hero Section */}
-      <section className="px-6 pt-32 pb-24 max-w-250 mx-auto w-full text-center relative z-10 flex flex-col items-center">
-        
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/3 border border-white/8 text-zinc-300 text-xs font-medium mb-8 backdrop-blur-md">
-          <Zap className="w-3 h-3 text-rose-500" />
-          <span className="uppercase tracking-widest text-[10px] font-bold">Portline Beta is now available</span>
-          <ChevronRight className="w-3 h-3 text-zinc-500" />
-        </div>
-        
-        <h1 className="text-6xl md:text-[6rem] font-semibold tracking-tighter mb-8 leading-[1.05] text-white">
-          Master any skill.<br />
-          <span className="text-zinc-500">Together.</span>
-        </h1>
-        
-        <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mb-12 leading-relaxed font-light">
-          Create structured roadmaps, invite your peers, and track your progress in real-time. 
-          The beautifully engineered platform for developer study groups.
-        </p>
+        {/* Hero Section */}
+        <section className="px-6 flex-1 flex flex-col items-center justify-center max-w-250 mx-auto w-full text-center relative z-10 pb-20">
+          
+          <div className="group inline-flex items-center gap-3 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:border-white/20 hover:bg-white/10 text-zinc-300 text-sm font-medium mb-8 backdrop-blur-md transition-all cursor-pointer shadow-[0_0_0_1px_rgba(255,255,255,0.02)_inset]">
+            <span className="flex items-center justify-center bg-rose-500 text-white text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full shadow-[0_0_15px_rgba(225,29,72,0.4)]">
+              Beta
+            </span>
+            <span className="text-xs tracking-wide text-zinc-200 group-hover:text-white transition-colors">Portline is now available</span>
+            <ChevronRight className="w-3.5 h-3.5 text-zinc-500 group-hover:text-zinc-300 group-hover:translate-x-0.5 transition-all" />
+          </div>
+          
+          <h1 className="text-6xl md:text-[6rem] font-semibold tracking-tighter mb-8 leading-[1.05] text-white">
+            Master any skill.<br />
+            <span className="text-zinc-500">Together.</span>
+          </h1>
+          
+          <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mb-12 leading-relaxed font-light">
+            Create structured roadmaps, invite your peers, and track your progress in real-time. 
+            The beautifully engineered platform for developer study groups.
+          </p>
 
-        <div className="flex items-center gap-4 flex-col sm:flex-row w-full sm:w-auto">
-          <Link
-            href="/login"
-            className="w-full sm:w-auto px-8 py-4 text-sm font-medium bg-rose-600 text-white rounded-full hover:bg-rose-700 transition-all shadow-[0_0_40px_rgba(225,29,72,0.4)]"
-          >
-            Get started for free
-          </Link>
-          <a href="#features" className="w-full sm:w-auto px-8 py-4 text-sm font-medium text-white border border-white/10 rounded-full hover:bg-white/5 transition-colors">
-            Explore features
-          </a>
-        </div>
-      </section>
+          <div className="flex items-center gap-4 flex-col sm:flex-row w-full sm:w-auto">
+            <Link
+              href="/login"
+              className="w-full sm:w-auto px-8 py-4 text-sm font-medium bg-rose-600 text-white rounded-full hover:bg-rose-700 transition-all shadow-[0_0_40px_rgba(225,29,72,0.4)]"
+            >
+              Get started for free
+            </Link>
+            <a href="#features" className="w-full sm:w-auto px-8 py-4 text-sm font-medium text-white border border-white/10 rounded-full hover:bg-white/5 transition-colors">
+              Explore features
+            </a>
+          </div>
+        </section>
+      </div>
 
 
       {/* Features Section */}

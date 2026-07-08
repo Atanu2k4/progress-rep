@@ -251,8 +251,8 @@ export default function Dashboard() {
                       }
                     `}
                   >
-                    <div className="flex justify-between items-start mb-4">
-                      <div>
+                    <div className="flex justify-between items-start mb-4 gap-4">
+                      <div className="flex-1 min-w-0">
                         <h3 className={`font-bitcount font-bold text-lg uppercase tracking-wide transition-colors flex items-center gap-2 ${selectedRoomId === room.id ? 'text-rose-400' : 'text-white group-hover:text-rose-400'}`}>
                           {room.name}
                           <button
@@ -261,45 +261,65 @@ export default function Dashboard() {
                               navigator.clipboard.writeText(room.id);
                               toast.success("Room code copied!");
                             }}
-                            className="text-zinc-500 hover:text-white transition-colors p-1 rounded-md hover:bg-white/10 opacity-70 hover:opacity-100"
+                            className="text-zinc-500 hover:text-white transition-colors p-1 rounded-md hover:bg-white/10 opacity-70 hover:opacity-100 shrink-0"
                             title="Copy room code"
                           >
                             <Copy className="w-3 h-3" />
                           </button>
                         </h3>
-                        <p className="text-xs text-zinc-500 mt-1 font-light truncate max-w-[150px]">{room.roadmap}</p>
+                        <p className="text-xs text-zinc-500 mt-1 font-light leading-relaxed">{room.roadmap}</p>
                       </div>
                       <button 
                         onClick={(e) => { e.stopPropagation(); handleDeleteRoom(room.id); }}
-                        className="text-zinc-600 hover:text-rose-500 transition-colors p-1 rounded-md hover:bg-rose-500/10"
+                        className="text-zinc-600 hover:text-rose-500 transition-colors p-1 rounded-md hover:bg-rose-500/10 shrink-0"
                         title="Delete Room"
                       >
                         <Trash2 className="w-4 h-4" />
                       </button>
                     </div>
                     
-                    <div className="flex items-center justify-between text-xs text-zinc-400 font-light">
-                      <div className="flex items-center gap-1.5 group/members relative cursor-help">
-                        <Users className="w-3.5 h-3.5" />
-                        <span>{room.members?.length || 0} members</span>
+                    <div className="flex items-center justify-between mt-4 border-t border-white/5 pt-4">
+                      <div className="flex items-center -space-x-2.5 group/members relative cursor-help">
+                        {room.members?.slice(0, 4).map((mId, index) => {
+                          const u = usersCache[mId];
+                          return (
+                            <div key={mId} className="w-7 h-7 rounded-full border-2 border-[#121212] bg-zinc-800 flex items-center justify-center overflow-hidden relative hover:z-20 hover:-translate-y-1 transition-transform shadow-md" style={{ zIndex: 10 - index }}>
+                              {u?.photoURL ? (
+                                <img src={u.photoURL} alt="avatar" className="w-full h-full object-cover" />
+                              ) : (
+                                <span className="text-[10px] font-bold text-rose-400 bg-rose-500/10 w-full h-full flex items-center justify-center">
+                                  {u?.displayName?.charAt(0).toUpperCase() || '?'}
+                                </span>
+                              )}
+                            </div>
+                          )
+                        })}
+                        {(room.members?.length || 0) > 4 && (
+                          <div className="w-7 h-7 rounded-full border-2 border-[#121212] bg-zinc-800 flex items-center justify-center z-[5] text-[10px] font-medium text-zinc-400 shadow-md">
+                            +{(room.members?.length || 0) - 4}
+                          </div>
+                        )}
                         
                         {/* Tooltip on hover */}
-                        <div className="absolute left-0 bottom-full mb-2 hidden group-hover/members:flex flex-col bg-[#111] border border-white/10 rounded-lg p-2 shadow-xl z-50 w-48">
-                          {room.members?.map(mId => {
-                            const u = usersCache[mId];
-                            return (
-                              <div key={mId} className="flex items-center gap-2 p-1.5 hover:bg-white/5 rounded-md transition-colors">
-                                {u?.photoURL ? (
-                                  <img src={u.photoURL} alt="avatar" className="w-5 h-5 rounded-full object-cover" />
-                                ) : (
-                                  <div className="w-5 h-5 rounded-full bg-rose-500/20 text-rose-500 flex items-center justify-center text-[10px] font-bold">
-                                    {u?.displayName?.charAt(0) || '?'}
-                                  </div>
-                                )}
-                                <span className="truncate text-zinc-300 text-xs">{u?.displayName || 'Loading...'}</span>
-                              </div>
-                            )
-                          })}
+                        <div className="absolute left-0 bottom-full mb-3 hidden group-hover/members:flex flex-col bg-zinc-900 border border-white/10 rounded-xl p-2 shadow-2xl z-50 w-56 animate-in fade-in slide-in-from-bottom-2">
+                          <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-wider mb-2 px-2 pt-1">Members ({room.members?.length || 0})</div>
+                          <div className="space-y-1 max-h-48 overflow-y-auto custom-scrollbar">
+                            {room.members?.map(mId => {
+                              const u = usersCache[mId];
+                              return (
+                                <div key={mId} className="flex items-center gap-3 p-2 hover:bg-white/5 rounded-lg transition-colors cursor-default">
+                                  {u?.photoURL ? (
+                                    <img src={u.photoURL} alt="avatar" className="w-6 h-6 rounded-full object-cover" />
+                                  ) : (
+                                    <div className="w-6 h-6 rounded-full bg-rose-500/20 text-rose-500 flex items-center justify-center text-[10px] font-bold">
+                                      {u?.displayName?.charAt(0).toUpperCase() || '?'}
+                                    </div>
+                                  )}
+                                  <span className="truncate text-zinc-200 text-sm font-medium">{u?.displayName || 'Loading...'}</span>
+                                </div>
+                              )
+                            })}
+                          </div>
                         </div>
                       </div>
                     </div>
