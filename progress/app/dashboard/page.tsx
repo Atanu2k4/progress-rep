@@ -1,7 +1,7 @@
 "use client";
 
 import { useAuth } from "@/context/AuthContext";
-import { Users, MoreHorizontal, CheckCircle2, Circle, Clock, Loader2, Calendar, ChevronLeft, ChevronRight, Activity, TrendingUp, FolderOpen, MousePointerClick, Trash2 } from "lucide-react";
+import { Users, MoreHorizontal, CheckCircle2, Circle, Clock, Loader2, Calendar, ChevronLeft, ChevronRight, Activity, TrendingUp, FolderOpen, MousePointerClick, Trash2, Copy } from "lucide-react";
 import { format, formatDistanceToNow, isSameDay, startOfMonth, endOfMonth, eachDayOfInterval, addMonths, subMonths, addDays } from "date-fns";
 import { useEffect, useState } from "react";
 import { db } from "@/lib/firebase";
@@ -207,9 +207,9 @@ export default function Dashboard() {
     <div className="min-h-screen bg-[#0a0a0a] text-zinc-50 font-sans selection:bg-rose-500/30 overflow-hidden relative">
       
       {/* Sleek Background Glow */}
-      <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-200 h-125 bg-rose-500/10 blur-30 rounded-full pointer-events-none"></div>
+      <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-200 h-125 bg-rose-500/10 blur-[120px] rounded-full pointer-events-none"></div>
 
-      <div className="p-8 max-w-400 mx-auto relative z-10 h-screen flex flex-col">
+      <div className="p-8 max-w-[1600px] mx-auto relative z-10 h-screen flex flex-col">
         <header className="mb-8 shrink-0">
           <h1 className="text-4xl font-bitcount font-bold text-white uppercase tracking-tight">
             Welcome back, {user?.displayName?.split(" ")[0] || "there"}
@@ -253,10 +253,21 @@ export default function Dashboard() {
                   >
                     <div className="flex justify-between items-start mb-4">
                       <div>
-                        <h3 className={`font-bitcount font-bold text-lg uppercase tracking-wide transition-colors ${selectedRoomId === room.id ? 'text-rose-400' : 'text-white group-hover:text-rose-400'}`}>
+                        <h3 className={`font-bitcount font-bold text-lg uppercase tracking-wide transition-colors flex items-center gap-2 ${selectedRoomId === room.id ? 'text-rose-400' : 'text-white group-hover:text-rose-400'}`}>
                           {room.name}
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              navigator.clipboard.writeText(room.id);
+                              toast.success("Room code copied!");
+                            }}
+                            className="text-zinc-500 hover:text-white transition-colors p-1 rounded-md hover:bg-white/10 opacity-70 hover:opacity-100"
+                            title="Copy room code"
+                          >
+                            <Copy className="w-3 h-3" />
+                          </button>
                         </h3>
-                        <p className="text-xs text-zinc-500 mt-1 font-light truncate max-w-37.5">{room.roadmap}</p>
+                        <p className="text-xs text-zinc-500 mt-1 font-light truncate max-w-[150px]">{room.roadmap}</p>
                       </div>
                       <button 
                         onClick={(e) => { e.stopPropagation(); handleDeleteRoom(room.id); }}

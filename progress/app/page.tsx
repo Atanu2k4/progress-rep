@@ -32,7 +32,7 @@ export default function Home() {
       {/* Falling Light Background Effect */}
       <div className="absolute top-0 inset-x-0 h-200 pointer-events-none">
         <div className="absolute inset-0 bg-linear-to-b from-rose-500/10 via-rose-500/5 to-transparent"></div>
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-200 h-150 bg-rose-500/20 blur-30 rounded-full opacity-50"></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-200 h-150 bg-rose-500/20 blur-[120px] rounded-full opacity-50"></div>
       </div>
 
       {/* Navigation */}
@@ -146,7 +146,7 @@ export default function Home() {
         {/* Falling Light Background Effect */}
         <div className="absolute top-0 inset-x-0 h-full pointer-events-none">
           <div className="absolute inset-0 bg-linear-to-b from-rose-500/10 via-rose-500/5 to-transparent"></div>
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-150 h-100 bg-rose-500/20 blur-25 rounded-full opacity-50"></div>
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-150 h-100 bg-rose-500/20 blur-[100px] rounded-full opacity-50"></div>
         </div>
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <h2 className="text-5xl md:text-6xl font-semibold text-white mb-8 tracking-tighter leading-[1.1]">Begin your journey.</h2>

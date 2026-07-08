@@ -97,7 +97,7 @@ export function RoadmapTimeline({ roomId, roadmapId, usersCache }: RoadmapTimeli
   const progressPercentage = Math.round((completedDays.length / roadmapData.length) * 100) || 0;
 
   return (
-    <div className="flex flex-col h-full bg-white/2 border border-white/5 rounded-2xl backdrop-blur-xl overflow-hidden max-h-200">
+    <div className="flex flex-col h-full bg-white/2 border border-white/5 rounded-2xl backdrop-blur-xl overflow-hidden max-h-[800px]">
       
       {/* Header */}
       <div className="p-6 border-b border-white/5 bg-black/20 sticky top-0 z-10 backdrop-blur-md">
@@ -172,7 +172,7 @@ export function RoadmapTimeline({ roomId, roadmapId, usersCache }: RoadmapTimeli
                             u.photoURL ? (
                               <img key={u.id || i} src={u.photoURL} alt={u.displayName} title={`${u.displayName} completed this`} className="w-5 h-5 rounded-full border border-[#050505] object-cover" />
                             ) : (
-                              <div key={u.id || i} title={`${u.displayName} completed this`} className="w-5 h-5 rounded-full border border-[#050505] bg-rose-500/20 text-rose-500 flex items-center justify-center text-2 font-bold">
+                              <div key={u.id || i} title={`${u.displayName} completed this`} className="w-5 h-5 rounded-full border border-[#050505] bg-rose-500/20 text-rose-500 flex items-center justify-center text-[8px] font-bold">
                                 {u.displayName?.charAt(0) || '?'}
                               </div>
                             )
