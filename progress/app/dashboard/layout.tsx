@@ -33,8 +33,8 @@ export default function DashboardLayout({
 
   if (loading || !user) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-[#0a0a0a]">
-        <div className="w-8 h-8 border-4 border-rose-500 border-t-transparent rounded-full animate-spin"></div>
+      <div className="flex items-center justify-center min-h-screen bg-background">
+        <div className="w-12 h-12 brutal-border rounded-full border-t-[#ffe800] animate-spin"></div>
       </div>
     );
   }
@@ -45,113 +45,117 @@ export default function DashboardLayout({
   };
 
   return (
-    <div className="flex h-screen bg-[#0a0a0a] text-zinc-50 font-sans selection:bg-rose-500/30">
+    <div className="flex h-screen bg-background text-foreground font-sans selection:bg-[#ffb4d4]">
       {/* Sidebar */}
-      <aside className="w-64 border-r border-[#1f1f1f] bg-[#0a0a0a] flex flex-col hidden md:flex">
-        <div className="p-6 border-b border-[#1f1f1f] flex items-center gap-2">
-          <div className="w-6 h-6 border-[3px] border-rose-500 rounded-sm"></div>
-          <span className="font-bold text-xl tracking-tight">Portline</span>
+      <aside className="w-64 border-r-[4px] border-black bg-white flex flex-col hidden md:flex z-20 brutal-shadow-lg relative">
+        <div className="p-6 border-b-[4px] border-black flex items-center gap-3 bg-[#ffe800]">
+          <div className="w-8 h-8 brutal-border bg-black flex items-center justify-center transform rotate-6">
+            <div className="w-3 h-3 bg-[#ffe800] rounded-none"></div>
+          </div>
+          <span className="font-bold text-xl tracking-tight uppercase font-bitcount">Portline</span>
         </div>
 
         <div className="p-4 flex-1 flex flex-col gap-6 overflow-y-auto">
           <div>
-            <div className="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-3 px-3">Actions</div>
-            <div className="space-y-2">
+            <div className="text-sm font-black text-black uppercase tracking-wider mb-3 px-3">Actions</div>
+            <div className="space-y-3">
               <button 
                 onClick={() => setIsCreateModalOpen(true)}
-                className="w-full flex items-center gap-3 px-3 py-2 rounded-lg bg-rose-600 hover:bg-rose-700 text-white font-medium transition-colors"
+                className="w-full flex items-center gap-3 px-3 py-3 bg-[#c4ff4d] text-black font-black uppercase tracking-wide brutal-btn"
               >
-                <Plus className="w-4 h-4" />
+                <Plus className="w-5 h-5" strokeWidth={3} />
                 Create Room
               </button>
               <button 
                 onClick={() => setIsJoinModalOpen(true)}
-                className="w-full flex items-center gap-3 px-3 py-2 rounded-lg bg-[#111] hover:bg-[#1a1a1a] text-zinc-300 font-medium transition-colors border border-[#27272a]"
+                className="w-full flex items-center gap-3 px-3 py-3 bg-white text-black font-black uppercase tracking-wide brutal-btn"
               >
-                <FolderOpen className="w-4 h-4" />
+                <FolderOpen className="w-5 h-5" strokeWidth={3} />
                 Join Room
               </button>
             </div>
           </div>
 
           <div>
-            <div className="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-3 px-3">Menu</div>
-            <nav className="space-y-1">
+            <div className="text-sm font-black text-black uppercase tracking-wider mb-3 px-3">Menu</div>
+            <nav className="space-y-2">
               <Link
                 href="/dashboard"
-                className={`flex items-center gap-3 px-3 py-2 rounded-lg font-medium transition-colors ${
+                className={`flex items-center gap-3 px-3 py-3 font-black transition-all uppercase tracking-wide ${
                   pathname === "/dashboard" 
-                    ? "bg-[#1f1f1f] text-white" 
-                    : "text-zinc-400 hover:bg-[#111] hover:text-zinc-200"
+                    ? "bg-[#ffb4d4] text-black brutal-border brutal-shadow-sm translate-x-1" 
+                    : "text-black hover:bg-[#ffb4d4]/30 hover:translate-x-1 brutal-border border-transparent hover:border-black"
                 }`}
               >
-                <LayoutDashboard className="w-4 h-4" />
+                <LayoutDashboard className="w-5 h-5" strokeWidth={3} />
                 Overview
               </Link>
               <Link
                 href="/dashboard/settings"
-                className={`flex items-center gap-3 px-3 py-2 rounded-lg font-medium transition-colors ${
+                className={`flex items-center gap-3 px-3 py-3 font-black transition-all uppercase tracking-wide ${
                   pathname === "/dashboard/settings" 
-                    ? "bg-[#1f1f1f] text-white" 
-                    : "text-zinc-400 hover:bg-[#111] hover:text-zinc-200"
+                    ? "bg-[#ffb4d4] text-black brutal-border brutal-shadow-sm translate-x-1" 
+                    : "text-black hover:bg-[#ffb4d4]/30 hover:translate-x-1 brutal-border border-transparent hover:border-black"
                 }`}
               >
-                <Settings className="w-4 h-4" />
+                <Settings className="w-5 h-5" strokeWidth={3} />
                 Settings
               </Link>
             </nav>
           </div>
         </div>
 
-        <div className="p-4 border-t border-[#1f1f1f]">
+        <div className="p-4 border-t-[4px] border-black bg-[#94dfff]">
           <div className="flex items-center gap-3 mb-4 px-2">
             {user.photoURL ? (
-              <img src={user.photoURL} alt="Profile" className="w-9 h-9 rounded-full border border-zinc-700" />
+              <img src={user.photoURL} alt="Profile" className="w-10 h-10 brutal-border bg-white" />
             ) : (
-              <div className="w-9 h-9 rounded-full bg-zinc-800 flex items-center justify-center text-sm border border-zinc-700">
+              <div className="w-10 h-10 bg-white flex items-center justify-center text-sm brutal-border font-black">
                 {user.displayName?.charAt(0) || user.email?.charAt(0)}
               </div>
             )}
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-zinc-200 truncate">{user.displayName || "User"}</p>
-              <p className="text-xs text-zinc-500 truncate">{user.email}</p>
+              <p className="text-sm font-black text-black truncate uppercase">{user.displayName || "User"}</p>
+              <p className="text-xs text-black font-bold truncate">{user.email}</p>
             </div>
           </div>
           <button 
             onClick={handleLogout}
-            className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-zinc-400 hover:text-zinc-200 hover:bg-[#111] transition-colors"
+            className="w-full flex items-center justify-center gap-2 px-3 py-3 bg-white text-black font-black uppercase tracking-wide brutal-btn"
           >
-            <LogOut className="w-4 h-4" />
+            <LogOut className="w-5 h-5" strokeWidth={3} />
             Sign Out
           </button>
         </div>
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 flex flex-col overflow-hidden">
+      <main className="flex-1 flex flex-col overflow-hidden bg-background relative z-10">
         {/* Mobile Header */}
-        <header className="md:hidden flex items-center justify-between p-4 border-b border-[#1f1f1f] bg-[#0a0a0a]">
+        <header className="md:hidden flex items-center justify-between p-4 border-b-[4px] border-black bg-[#ffe800] brutal-shadow-sm relative z-20">
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 border-[3px] border-rose-500 rounded-sm"></div>
-            <span className="font-bold text-lg tracking-tight">Portline</span>
+            <div className="w-8 h-8 brutal-border bg-black flex items-center justify-center transform rotate-6">
+              <div className="w-3 h-3 bg-[#ffe800] rounded-none"></div>
+            </div>
+            <span className="font-bold text-lg tracking-tight uppercase font-bitcount">Portline</span>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <button 
               onClick={() => setIsCreateModalOpen(true)}
-              className="p-2 bg-rose-600 rounded-lg text-white"
+              className="p-2 bg-[#c4ff4d] brutal-btn"
             >
-              <Plus className="w-4 h-4" />
+              <Plus className="w-5 h-5 text-black" strokeWidth={3} />
             </button>
             <button 
               onClick={() => setIsJoinModalOpen(true)}
-              className="p-2 bg-[#111] border border-[#27272a] rounded-lg text-white"
+              className="p-2 bg-white brutal-btn"
             >
-              <FolderOpen className="w-4 h-4" />
+              <FolderOpen className="w-5 h-5 text-black" strokeWidth={3} />
             </button>
             {user.photoURL ? (
-              <img src={user.photoURL} alt="Profile" className="w-8 h-8 rounded-full border border-[#27272a]" />
+              <img src={user.photoURL} alt="Profile" className="w-10 h-10 brutal-border bg-white" />
             ) : (
-              <div className="w-8 h-8 rounded-full bg-[#111] flex items-center justify-center text-sm border border-[#27272a]">
+              <div className="w-10 h-10 bg-white flex items-center justify-center text-sm brutal-border font-black">
                 {user.displayName?.charAt(0) || user.email?.charAt(0)}
               </div>
             )}

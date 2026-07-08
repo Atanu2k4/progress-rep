@@ -80,33 +80,33 @@ export function JoinRoomModal({ isOpen, onClose, onSuccess }: JoinRoomModalProps
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
       <div 
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
         onClick={onClose}
       ></div>
       
-      <div className="relative w-full max-w-md bg-[#0a0a0a] rounded-2xl border border-[#27272a] shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
-        <div className="flex items-center justify-between p-6 border-b border-[#1f1f1f]">
-          <h2 className="text-xl font-semibold text-white">Join a Room</h2>
+      <div className="relative w-full max-w-md bg-white brutal-border brutal-shadow-lg overflow-hidden transform -rotate-1">
+        <div className="flex items-center justify-between p-6 border-b-[4px] border-black bg-[#94dfff]">
+          <h2 className="text-2xl font-black text-black uppercase tracking-tight">Join a Room</h2>
           <button 
             onClick={onClose}
-            className="p-2 text-zinc-400 hover:text-white rounded-lg hover:bg-[#1a1a1a] transition-colors"
+            className="p-1 brutal-border bg-white hover:bg-red-500 hover:text-white transition-colors brutal-shadow-sm active:brutal-shadow-none"
           >
-            <X className="w-5 h-5" />
+            <X className="w-5 h-5" strokeWidth={3} />
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="p-6">
+        <form onSubmit={handleSubmit} className="p-8">
           {error && (
-            <div className="flex items-start gap-2 p-3 mb-5 text-sm text-red-400 bg-red-950/50 border border-red-900/50 rounded-lg">
-              <Info className="w-4 h-4 mt-0.5 shrink-0" />
+            <div className="flex items-start gap-3 p-4 mb-6 text-sm text-black bg-[#ff9c9c] brutal-border brutal-shadow-sm font-bold">
+              <Info className="w-5 h-5 mt-0.5 shrink-0" strokeWidth={3} />
               <p>{error}</p>
             </div>
           )}
 
-          <div className="space-y-2 mb-6">
-            <label htmlFor="roomCode" className="block text-sm font-medium text-zinc-300">
+          <div className="space-y-4 mb-8">
+            <label htmlFor="roomCode" className="block text-lg font-black text-black uppercase tracking-wide">
               Room Code
             </label>
             <input
@@ -118,36 +118,32 @@ export function JoinRoomModal({ isOpen, onClose, onSuccess }: JoinRoomModalProps
                 if (error) setError("");
               }}
               placeholder="Paste your room code here"
-              className={`w-full bg-[#111] border rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-1 transition-all ${
-                error 
-                  ? 'border-red-500/50 focus:border-red-500 focus:ring-red-500/20' 
-                  : 'border-[#27272a] focus:border-rose-500 focus:ring-rose-500'
-              }`}
+              className="w-full bg-white brutal-border px-4 py-4 text-black placeholder-black/40 font-bold focus:outline-none focus:ring-0 focus:brutal-shadow transition-shadow"
               autoFocus
             />
-            <p className="text-xs text-zinc-500 mt-2">
-              * Must be a valid Firestore document ID (provided by the room creator)
+            <p className="text-sm text-black font-bold mt-2 px-1">
+              * Must be a valid ID provided by the room creator
             </p>
           </div>
 
-          <div className="flex justify-end gap-3 mt-8">
+          <div className="flex justify-end gap-4 border-t-[3px] border-black pt-6">
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-3 text-sm font-medium text-zinc-300 hover:text-white transition-colors"
+              className="px-6 py-3 font-black text-black bg-white brutal-border hover:bg-black hover:text-white transition-colors uppercase tracking-wide"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={loading || !isValidFormat}
-              className="flex items-center justify-center gap-2 px-6 py-3 bg-[#111] hover:bg-[#1a1a1a] border border-[#27272a] disabled:opacity-50 disabled:hover:bg-[#111] text-white rounded-xl font-medium transition-colors"
+              className="flex items-center justify-center gap-2 px-6 py-3 bg-[#ffe800] disabled:opacity-50 text-black font-black uppercase tracking-wide brutal-btn"
             >
               {loading ? (
-                <Loader2 className="w-5 h-5 animate-spin" />
+                <Loader2 className="w-5 h-5 animate-spin" strokeWidth={3} />
               ) : (
                 <>
-                  <FolderOpen className="w-5 h-5" />
+                  <FolderOpen className="w-5 h-5" strokeWidth={3} />
                   Join Room
                 </>
               )}

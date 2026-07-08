@@ -88,8 +88,8 @@ export function RoadmapTimeline({ roomId, roadmapId, usersCache }: RoadmapTimeli
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full bg-white/2 border border-white/5 rounded-2xl backdrop-blur-xl">
-        <Loader2 className="w-8 h-8 animate-spin text-rose-500" />
+      <div className="flex items-center justify-center h-full bg-white brutal-border brutal-shadow-lg">
+        <div className="w-12 h-12 brutal-border rounded-full border-t-[#ffe800] animate-spin"></div>
       </div>
     );
   }
@@ -97,29 +97,31 @@ export function RoadmapTimeline({ roomId, roadmapId, usersCache }: RoadmapTimeli
   const progressPercentage = Math.round((completedDays.length / roadmapData.length) * 100) || 0;
 
   return (
-    <div className="flex flex-col h-full bg-white/2 border border-white/5 rounded-2xl backdrop-blur-xl overflow-hidden max-h-[800px]">
+    <div className="flex flex-col h-full bg-white brutal-border brutal-shadow-lg overflow-hidden max-h-[800px] relative">
       
       {/* Header */}
-      <div className="p-6 border-b border-white/5 bg-black/20 sticky top-0 z-10 backdrop-blur-md">
+      <div className="p-6 border-b-[4px] border-black bg-[#94dfff] sticky top-0 z-20">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-2xl font-bitcount font-bold uppercase tracking-widest text-white flex items-center gap-3">
-            <BookOpen className="w-6 h-6 text-rose-500" />
+          <h2 className="text-2xl font-bitcount font-black uppercase tracking-widest text-black flex items-center gap-3">
+            <div className="w-8 h-8 brutal-border bg-white flex items-center justify-center brutal-shadow-sm transform -rotate-6">
+              <BookOpen className="w-5 h-5 text-black" strokeWidth={3} />
+            </div>
             Roadmap Progress
           </h2>
-          <span className="text-sm font-medium text-rose-400 bg-rose-500/10 px-3 py-1 rounded-full border border-rose-500/20">
+          <span className="text-sm font-black text-black bg-[#c4ff4d] px-3 py-1 brutal-border brutal-shadow-sm transform rotate-2">
             {progressPercentage}% Completed
           </span>
         </div>
-        <div className="h-1.5 w-full bg-black/50 border border-white/5 rounded-full overflow-hidden">
+        <div className="h-4 w-full bg-white brutal-border overflow-hidden">
           <div 
-            className="h-full bg-linear-to-r from-rose-600 to-rose-400 rounded-full transition-all duration-700 shadow-[0_0_10px_rgba(225,29,72,0.4)]" 
+            className="h-full bg-black transition-all duration-700" 
             style={{ width: `${progressPercentage}%` }}
           ></div>
         </div>
       </div>
 
       {/* Timeline */}
-      <div className="flex-1 overflow-y-auto p-6 space-y-8 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
+      <div className="flex-1 overflow-y-auto p-8 space-y-10 custom-scrollbar bg-white">
         {roadmapData.map((module: any, idx: number) => {
           const isCompleted = completedDays.includes(module.day);
           
@@ -129,68 +131,68 @@ export function RoadmapTimeline({ roomId, roadmapId, usersCache }: RoadmapTimeli
             .filter(Boolean);
           
           return (
-            <div key={idx} className="relative flex gap-6 group">
+            <div key={idx} className="relative flex gap-8 group">
               {/* Vertical line connecting nodes */}
               {idx !== roadmapData.length - 1 && (
-                <div className={`absolute left-3 top-8 -bottom-8 w-0.5 ${isCompleted ? "bg-rose-500/50" : "bg-white/5"}`}></div>
+                <div className={`absolute left-[17px] top-10 -bottom-10 w-[4px] ${isCompleted ? "bg-black" : "bg-black/20"}`}></div>
               )}
               
               {/* Node */}
               <div 
-                className="relative z-10 mt-1 cursor-pointer shrink-0" 
+                className="relative z-10 mt-2 cursor-pointer shrink-0" 
                 onClick={() => toggleDay(module.day)}
               >
                 {isCompleted ? (
-                  <div className="w-6 h-6 rounded-full bg-rose-500 flex items-center justify-center shadow-[0_0_12px_rgba(225,29,72,0.6)]">
-                    <Check className="w-3.5 h-3.5 text-white" strokeWidth={3} />
+                  <div className="w-10 h-10 rounded-none brutal-border bg-[#c4ff4d] flex items-center justify-center brutal-shadow transform hover:scale-110 transition-transform">
+                    <Check className="w-6 h-6 text-black" strokeWidth={4} />
                   </div>
                 ) : (
-                  <div className="w-6 h-6 rounded-full bg-[#111] border-2 border-white/10 group-hover:border-rose-500/50 transition-colors flex items-center justify-center"></div>
+                  <div className="w-10 h-10 rounded-none brutal-border bg-white group-hover:bg-[#ffe800] transition-colors flex items-center justify-center brutal-shadow-sm hover:brutal-shadow"></div>
                 )}
               </div>
 
               {/* Content */}
               <div 
-                className={`flex-1 p-5 rounded-xl border transition-all cursor-pointer ${
+                className={`flex-1 p-6 brutal-border transition-all cursor-pointer brutal-shadow-sm hover:brutal-shadow ${
                   isCompleted 
-                    ? "bg-rose-500/5 border-rose-500/20" 
-                    : "bg-white/1 border-white/5 group-hover:border-white/10 group-hover:bg-white/3"
+                    ? "bg-[#c4ff4d]/20" 
+                    : "bg-white"
                 }`}
                 onClick={() => toggleDay(module.day)}
               >
-                <div className="flex justify-between items-start mb-2">
+                <div className="flex justify-between items-start mb-4">
                   <div className="flex flex-col">
-                    <h3 className={`font-bitcount font-bold uppercase tracking-wide text-lg ${isCompleted ? "text-rose-300" : "text-white"}`}>
+                    <h3 className={`font-bitcount font-black uppercase tracking-wide text-2xl text-black`}>
                       Day {module.day}: {module.title}
                     </h3>
                     
                     {/* Avatars of people who completed it */}
                     {completedByUsers.length > 0 && (
-                      <div className="flex items-center gap-2 mt-2">
-                        <div className="flex -space-x-1.5">
+                      <div className="flex items-center gap-2 mt-3">
+                        <div className="flex -space-x-2">
                           {completedByUsers.map((u, i) => (
                             u.photoURL ? (
-                              <img key={u.id || i} src={u.photoURL} alt={u.displayName} title={`${u.displayName} completed this`} className="w-5 h-5 rounded-full border border-[#050505] object-cover" />
+                              <img key={u.id || i} src={u.photoURL} alt={u.displayName} title={`${u.displayName} completed this`} className="w-8 h-8 rounded-none brutal-border object-cover" style={{ zIndex: 10 - i }} />
                             ) : (
-                              <div key={u.id || i} title={`${u.displayName} completed this`} className="w-5 h-5 rounded-full border border-[#050505] bg-rose-500/20 text-rose-500 flex items-center justify-center text-[8px] font-bold">
+                              <div key={u.id || i} title={`${u.displayName} completed this`} className="w-8 h-8 rounded-none brutal-border bg-[#ffb4d4] text-black flex items-center justify-center text-xs font-black" style={{ zIndex: 10 - i }}>
                                 {u.displayName?.charAt(0) || '?'}
                               </div>
                             )
                           ))}
                         </div>
-                        <span className="text-[10px] text-zinc-500">completed</span>
+                        <span className="text-xs font-black uppercase bg-white border-[2px] border-black px-2 py-1 transform -rotate-2">completed</span>
                       </div>
                     )}
                   </div>
-                  <span className="text-xs font-bitcount font-bold uppercase tracking-widest text-zinc-400 bg-white/5 border border-white/10 px-2 py-1 rounded">
+                  <span className="text-sm font-black uppercase tracking-widest text-black bg-[#ffe800] brutal-border px-3 py-1 transform rotate-2">
                     Week {module.week}
                   </span>
                 </div>
                 
                 {module.topics?.length > 0 && (
-                  <div className="mt-4 flex flex-wrap gap-1.5 mb-4">
+                  <div className="mt-6 flex flex-wrap gap-2 mb-4">
                     {module.topics.map((topic: string, i: number) => (
-                      <div key={i} className={`text-xs font-medium px-3 py-1.5 rounded-md border ${isCompleted ? "bg-rose-500/10 text-rose-300 border-rose-500/20" : "bg-white/3 text-zinc-300 border-white/10"}`}>
+                      <div key={i} className={`text-sm font-black px-3 py-1.5 brutal-border uppercase ${isCompleted ? "bg-white text-black" : "bg-black text-white"}`}>
                         {topic.replace(/`/g, '')}
                       </div>
                     ))}
@@ -198,11 +200,11 @@ export function RoadmapTimeline({ roomId, roadmapId, usersCache }: RoadmapTimeli
                 )}
 
                 {module.practice && (
-                  <div className="bg-black/30 p-4 rounded-xl border border-white/2">
-                    <span className="text-xs font-bitcount font-bold text-rose-400 uppercase tracking-widest flex items-center gap-2 mb-3">
-                      <Code2 className="w-4 h-4" /> Practice Problems
+                  <div className="bg-[#f0f0f0] p-5 brutal-border mt-4">
+                    <span className="text-sm font-black text-black uppercase tracking-widest flex items-center gap-2 mb-4 border-b-[2px] border-black pb-2">
+                      <Code2 className="w-5 h-5 text-black" strokeWidth={3} /> Practice Problems
                     </span>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-3">
                       {parsePractice(module.practice).map(p => {
                         if (p.type === 'lc') {
                           const searchUrl = p.slug 
@@ -210,14 +212,15 @@ export function RoadmapTimeline({ roomId, roadmapId, usersCache }: RoadmapTimeli
                             : `https://leetcode.com/problemset/?search=${p.num}`;
                           return (
                             <a key={p.id} href={searchUrl} target="_blank" rel="noopener noreferrer" 
-                               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#282828] border border-white/10 hover:border-[#FFA116] hover:bg-[#FFA116]/10 transition-colors text-xs text-zinc-300 group/lc">
-                              <span className="font-mono font-bold text-[#FFA116]">LC {p.num}</span>
-                              {p.text && <span className="font-mono text-zinc-400 group-hover/lc:text-zinc-300 transition-colors">{p.text}</span>}
+                               className="inline-flex items-center gap-2 px-3 py-2 bg-white brutal-border text-sm text-black hover:bg-[#ffb4d4] transition-colors brutal-shadow-sm active:brutal-shadow-none group/lc"
+                               onClick={(e) => e.stopPropagation()}>
+                              <span className="font-black">LC {p.num}</span>
+                              {p.text && <span className="font-bold">{p.text}</span>}
                             </a>
                           );
                         }
                         return (
-                          <span key={p.id} className="inline-block px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-zinc-400">
+                          <span key={p.id} className="inline-block px-3 py-2 bg-white brutal-border text-sm font-bold text-black">
                             {p.raw}
                           </span>
                         );
@@ -232,7 +235,7 @@ export function RoadmapTimeline({ roomId, roadmapId, usersCache }: RoadmapTimeli
                       e.stopPropagation();
                       setActivePrompt({ day: module.day, text: module.prompt });
                     }}
-                    className="mt-4 border border-white/10 bg-white/5 hover:bg-white/10 px-3 py-1.5 text-xs font-medium uppercase tracking-wide text-zinc-300 rounded transition-colors"
+                    className="mt-6 bg-[#94dfff] px-4 py-2 text-sm font-black uppercase tracking-wide text-black brutal-btn"
                   >
                     View Prompt
                   </button>
@@ -263,20 +266,20 @@ function PromptModal({ day, text, onClose }: { day: number; text: string; onClos
   };
 
   return (
-    <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm" onClick={onClose}>
-      <div className="relative flex max-h-[90vh] w-full max-w-2xl flex-col rounded-xl border border-white/10 bg-[#0a0a0a] shadow-2xl" onClick={e => e.stopPropagation()}>
-        <div className="flex items-center justify-between border-b border-white/10 p-4">
-          <h2 className="text-lg font-medium text-white">AI Prompt — Day {day}</h2>
-          <button onClick={onClose} className="text-zinc-400 hover:text-white transition-colors">✕</button>
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm" onClick={onClose}>
+      <div className="relative flex max-h-[90vh] w-full max-w-2xl flex-col brutal-border bg-white brutal-shadow-lg transform rotate-1" onClick={e => e.stopPropagation()}>
+        <div className="flex items-center justify-between border-b-[4px] border-black bg-[#ffe800] p-5">
+          <h2 className="text-xl font-black text-black uppercase">AI Prompt — Day {day}</h2>
+          <button onClick={onClose} className="w-8 h-8 brutal-border bg-white hover:bg-red-500 hover:text-white transition-colors flex items-center justify-center font-black">✕</button>
         </div>
-        <div className="flex-1 overflow-y-auto p-4 sm:p-6 text-zinc-300">
-          <p className="mb-4 text-sm font-light text-zinc-400">Copy this prompt into ChatGPT or Claude to learn today's concepts.</p>
-          <div className="rounded-lg border border-white/10 bg-white/2 p-4">
-            <pre className="whitespace-pre-wrap font-mono text-xs sm:text-sm leading-relaxed">{text}</pre>
+        <div className="flex-1 overflow-y-auto p-6 text-black custom-scrollbar bg-white">
+          <p className="mb-4 text-sm font-bold uppercase tracking-wide">Copy this prompt into ChatGPT or Claude to learn today's concepts.</p>
+          <div className="brutal-border bg-[#f0f0f0] p-5">
+            <pre className="whitespace-pre-wrap font-mono text-sm leading-relaxed font-bold">{text}</pre>
           </div>
         </div>
-        <div className="border-t border-white/10 p-4">
-          <button onClick={copyToClipboard} className="w-full rounded-lg bg-white text-black px-4 py-3 text-sm font-medium hover:bg-zinc-200 transition-colors">
+        <div className="border-t-[4px] border-black p-5 bg-[#c4ff4d]">
+          <button onClick={copyToClipboard} className="w-full bg-white text-black px-4 py-3 text-lg font-black uppercase brutal-btn">
             {copied ? "Copied! 🚀" : "Copy to Clipboard"}
           </button>
         </div>

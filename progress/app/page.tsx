@@ -10,9 +10,6 @@ export default function Home() {
   const { user, loading } = useAuth();
   const router = useRouter();
 
-
-
-
   useEffect(() => {
     if (!loading && user) {
       router.push("/dashboard");
@@ -21,45 +18,37 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-black">
-        <div className="w-8 h-8 border-4 border-rose-500 border-t-transparent rounded-full animate-spin"></div>
+      <div className="flex items-center justify-center min-h-screen bg-background">
+        <div className="w-12 h-12 brutal-border rounded-full border-t-[#ffe800] animate-spin"></div>
       </div>
     );
   }
 
   return (
-    <main className="flex flex-col min-h-screen bg-[#0a0a0a] text-zinc-50 font-sans selection:bg-rose-500/30 overflow-hidden relative">
-      {/* Falling Light Background Effect */}
-      <div className="absolute top-0 inset-x-0 h-200 pointer-events-none">
-        <div className="absolute inset-0 bg-linear-to-b from-rose-500/10 via-rose-500/5 to-transparent"></div>
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-200 h-150 bg-rose-500/20 blur-[120px] rounded-full opacity-50"></div>
-      </div>
-
-      {/* First Screen Container */}
+    <main className="flex flex-col min-h-screen bg-background text-foreground font-sans selection:bg-[#ffb4d4] overflow-hidden relative">
       <div className="min-h-screen flex flex-col">
-        {/* Navigation */}
-        <nav className="w-full flex items-center justify-between px-6 py-6 max-w-7xl mx-auto z-50 border-b border-white/5">
+        <nav className="w-full flex items-center justify-between px-6 py-6 max-w-7xl mx-auto z-50 brutal-border-b border-b-[3px] border-black bg-[#ffb4d4]">
           <div className="flex items-center gap-2 flex-1">
-            <div className="w-6 h-6 border-2 border-white rounded-1 flex items-center justify-center">
-               <div className="w-2 h-2 bg-rose-500 rounded-[1px]"></div>
+            <div className="w-8 h-8 brutal-border bg-[#ffe800] flex items-center justify-center transform -rotate-6">
+               <div className="w-3 h-3 bg-black rounded-full"></div>
             </div>
-            <span className="font-bold text-sm tracking-widest uppercase text-white">PORTLINE</span>
+            <span className="font-bold text-lg tracking-widest uppercase text-black font-bitcount">PORTLINE</span>
           </div>
-          <div className="hidden md:flex items-center justify-center gap-8 text-sm font-medium text-zinc-400">
-            <a href="#features" className="hover:text-white transition-colors">Platform</a>
-            <a href="#roadmaps" className="hover:text-white transition-colors">Roadmaps</a>
-            <a href="#community" className="hover:text-white transition-colors">Community</a>
+          <div className="hidden md:flex items-center justify-center gap-8 text-sm font-bold text-black uppercase tracking-wide">
+            <a href="#features" className="hover:underline decoration-4 underline-offset-4 decoration-black">Platform</a>
+            <a href="#roadmaps" className="hover:underline decoration-4 underline-offset-4 decoration-black">Roadmaps</a>
+            <a href="#community" className="hover:underline decoration-4 underline-offset-4 decoration-black">Community</a>
           </div>
           <div className="flex items-center justify-end gap-4 flex-1">
             <Link
               href="/login"
-              className="text-sm font-medium text-zinc-300 hover:text-white transition-colors hidden md:block"
+              className="text-sm font-bold text-black hover:underline decoration-4 underline-offset-4 hidden md:block uppercase"
             >
               Log in
             </Link>
             <Link
               href="/login"
-              className="px-4 py-2 text-sm font-medium bg-white text-black rounded-full hover:bg-zinc-200 transition-colors inline-flex items-center gap-2"
+              className="px-5 py-2.5 text-sm font-bold bg-[#ffe800] text-black brutal-btn inline-flex items-center gap-2 uppercase tracking-wide"
             >
               Start learning
               <ArrowRight className="w-4 h-4" />
@@ -67,78 +56,80 @@ export default function Home() {
           </div>
         </nav>
 
-        {/* Hero Section */}
-        <section className="px-6 flex-1 flex flex-col items-center justify-center max-w-250 mx-auto w-full text-center relative z-10 pb-20">
-          
-          <div className="group inline-flex items-center gap-3 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:border-white/20 hover:bg-white/10 text-zinc-300 text-sm font-medium mb-8 backdrop-blur-md transition-all cursor-pointer shadow-[0_0_0_1px_rgba(255,255,255,0.02)_inset]">
-            <span className="flex items-center justify-center bg-rose-500 text-white text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full shadow-[0_0_15px_rgba(225,29,72,0.4)]">
+        <section className="px-6 flex-1 flex flex-col items-center justify-center max-w-250 mx-auto w-full text-center relative z-10 py-20">
+          <div className="group inline-flex items-center gap-3 px-4 py-2 brutal-border bg-[#c4ff4d] text-black text-sm font-bold mb-10 brutal-shadow-sm cursor-pointer hover:bg-[#b0f030]">
+            <span className="flex items-center justify-center bg-black text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1 brutal-border">
               Beta
             </span>
-            <span className="text-xs tracking-wide text-zinc-200 group-hover:text-white transition-colors">Portline is now available</span>
-            <ChevronRight className="w-3.5 h-3.5 text-zinc-500 group-hover:text-zinc-300 group-hover:translate-x-0.5 transition-all" />
+            <span className="text-sm tracking-widest uppercase">Portline is now available</span>
+            <ChevronRight className="w-4 h-4 text-black group-hover:translate-x-1 transition-transform" />
           </div>
           
-          <h1 className="text-6xl md:text-[6rem] font-semibold tracking-tighter mb-8 leading-[1.05] text-white">
+          <h1 className="text-6xl md:text-[7rem] font-black tracking-tighter mb-8 leading-[1] text-black uppercase drop-shadow-[4px_4px_0_rgba(0,0,0,1)] text-white" style={{ WebkitTextStroke: "2px black" }}>
             Master any skill.<br />
-            <span className="text-zinc-500">Together.</span>
+            <span className="bg-[#ffb4d4] px-4 text-black" style={{ WebkitTextStroke: "0" }}>Together.</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mb-12 leading-relaxed font-light">
+          <p className="text-xl md:text-2xl text-black font-bold max-w-2xl mb-12 leading-relaxed border-l-8 border-black pl-6 text-left mx-auto">
             Create structured roadmaps, invite your peers, and track your progress in real-time. 
-            The beautifully engineered platform for developer study groups.
+            The brutalist platform for developer study groups.
           </p>
 
-          <div className="flex items-center gap-4 flex-col sm:flex-row w-full sm:w-auto">
+          <div className="flex items-center gap-6 flex-col sm:flex-row w-full sm:w-auto justify-center mt-4">
             <Link
               href="/login"
-              className="w-full sm:w-auto px-8 py-4 text-sm font-medium bg-rose-600 text-white rounded-full hover:bg-rose-700 transition-all shadow-[0_0_40px_rgba(225,29,72,0.4)]"
+              className="w-full sm:w-auto px-10 py-5 text-lg font-black bg-[#ffe800] text-black brutal-btn uppercase tracking-widest"
             >
               Get started for free
             </Link>
-            <a href="#features" className="w-full sm:w-auto px-8 py-4 text-sm font-medium text-white border border-white/10 rounded-full hover:bg-white/5 transition-colors">
+            <a href="#features" className="w-full sm:w-auto px-10 py-5 text-lg font-black bg-white text-black brutal-btn uppercase tracking-widest">
               Explore features
             </a>
           </div>
         </section>
       </div>
 
-
-      {/* Features Section */}
-      <section id="features" className="py-32 border-t border-white/5 bg-black">
+      <section id="features" className="py-32 border-t-[4px] border-black bg-[#c4ff4d]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-24 text-center max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-semibold mb-6 text-white tracking-tighter leading-[1.1]">The ultimate standard in collaborative learning.</h2>
-            <p className="text-zinc-400 text-lg md:text-xl font-light">Portline combines your roadmaps, progress tracking, and team activity into a single, beautifully engineered ecosystem.</p>
+          <div className="mb-24 text-left max-w-3xl brutal-border bg-white p-8 brutal-shadow-lg transform -rotate-1">
+            <h2 className="text-4xl md:text-6xl font-black mb-6 text-black tracking-tighter leading-[1] uppercase">The ultimate standard in collaborative learning.</h2>
+            <p className="text-black text-xl font-bold">Portline combines your roadmaps, progress tracking, and team activity into a single, brutally engineered ecosystem.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             <FeatureCard 
-              icon={<Activity className="w-5 h-5 text-white" />}
+              color="bg-[#ffb4d4]"
+              icon={<Activity className="w-8 h-8 text-black" />}
               title="Real-time Sync"
               description="Progress updates are broadcasted instantly to all members in your study group via Firestore infrastructure."
             />
             <FeatureCard 
-              icon={<Boxes className="w-5 h-5 text-white" />}
+              color="bg-white"
+              icon={<Boxes className="w-8 h-8 text-black" />}
               title="Structured Roadmaps"
               description="Deploy curated curriculums like DSA or System Design, directly integrated into your room's timeline."
             />
             <FeatureCard 
-              icon={<Lock className="w-5 h-5 text-white" />}
+              color="bg-[#ffe800]"
+              icon={<Lock className="w-8 h-8 text-black" />}
               title="Secure Enclaves"
               description="Granular database security rules ensure only invited members can view or mutate room state."
             />
             <FeatureCard 
-              icon={<BarChart className="w-5 h-5 text-white" />}
+              color="bg-white"
+              icon={<BarChart className="w-8 h-8 text-black" />}
               title="Activity Heatmaps"
               description="Visualize your consistency with GitHub-style contribution graphs synced to your actual progress."
             />
             <FeatureCard 
-              icon={<Users className="w-5 h-5 text-white" />}
+              color="bg-[#94dfff]"
+              icon={<Users className="w-8 h-8 text-black" />}
               title="Multiplayer First"
               description="Built from the ground up for teams. See exactly who completed what, and when."
             />
             <FeatureCard 
-              icon={<Server className="w-5 h-5 text-white" />}
+              color="bg-white"
+              icon={<Server className="w-8 h-8 text-black" />}
               title="Serverless Backend"
               description="Powered by blazing fast Firebase architecture for zero-latency updates and massive scale."
             />
@@ -146,80 +137,76 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-40 border-t border-white/5 relative overflow-hidden">
-        {/* Falling Light Background Effect */}
-        <div className="absolute top-0 inset-x-0 h-full pointer-events-none">
-          <div className="absolute inset-0 bg-linear-to-b from-rose-500/10 via-rose-500/5 to-transparent"></div>
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-150 h-100 bg-rose-500/20 blur-[100px] rounded-full opacity-50"></div>
-        </div>
+      <section className="py-40 border-t-[4px] border-black bg-[#ffb4d4] relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <h2 className="text-5xl md:text-6xl font-semibold text-white mb-8 tracking-tighter leading-[1.1]">Begin your journey.</h2>
-          <p className="text-zinc-400 text-xl mb-12 max-w-2xl mx-auto font-light">
+          <h2 className="text-6xl md:text-8xl font-black text-black mb-8 tracking-tighter leading-[1] uppercase">Begin your<br/>journey.</h2>
+          <p className="text-black text-2xl font-bold mb-12 max-w-2xl mx-auto bg-white brutal-border p-6 transform rotate-1 brutal-shadow">
             Create your first room today, invite your peers, and start tracking your development progress in perfect sync.
           </p>
           <Link
             href="/login"
-            className="inline-flex items-center justify-center px-10 py-5 text-sm font-medium bg-white text-black rounded-full hover:bg-zinc-200 transition-all shadow-[0_0_40px_rgba(255,255,255,0.1)]"
+            className="inline-flex items-center justify-center px-12 py-6 text-xl font-black bg-[#ffe800] text-black brutal-btn uppercase tracking-widest"
           >
             Start learning for free
           </Link>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-white/5 py-16 bg-[#0a0a0a]">
+      <footer className="border-t-[4px] border-black py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center gap-2 mb-6">
-               <div className="w-5 h-5 border-2 border-white rounded-1 flex items-center justify-center">
-                  <div className="w-1.5 h-1.5 bg-rose-500 rounded-[1px]"></div>
+            <div className="flex items-center gap-3 mb-6">
+               <div className="w-8 h-8 brutal-border bg-black flex items-center justify-center transform rotate-6">
+                  <div className="w-3 h-3 bg-[#ffe800] rounded-none"></div>
                </div>
-              <span className="font-bold text-sm tracking-widest uppercase text-white">PORTLINE</span>
+              <span className="font-bold text-xl tracking-widest uppercase text-black font-bitcount">PORTLINE</span>
             </div>
-            <p className="text-sm text-zinc-500 max-w-xs mb-8 font-light">
+            <p className="text-lg text-black font-bold max-w-sm mb-8">
               The collaborative learning platform built specifically for ambitious developers and study groups.
             </p>
-            <div className="flex gap-6 text-sm font-medium">
-              <a href="#" className="text-zinc-500 hover:text-white transition-colors">Twitter</a>
-              <a href="#" className="text-zinc-500 hover:text-white transition-colors">GitHub</a>
+            <div className="flex gap-6 text-lg font-black uppercase">
+              <a href="#" className="text-black hover:underline decoration-4 underline-offset-4">Twitter</a>
+              <a href="#" className="text-black hover:underline decoration-4 underline-offset-4">GitHub</a>
             </div>
           </div>
           
           <div>
-            <h4 className="text-white font-medium mb-6 text-sm">Platform</h4>
-            <ul className="space-y-4 text-sm text-zinc-500">
-              <li><Link href="/dashboard" className="hover:text-white transition-colors">Dashboard</Link></li>
-              <li><Link href="/login" className="hover:text-white transition-colors">Create Room</Link></li>
-              <li><Link href="/login" className="hover:text-white transition-colors">Join Room</Link></li>
+            <h4 className="text-black font-black mb-6 text-xl uppercase tracking-wider">Platform</h4>
+            <ul className="space-y-4 text-lg font-bold text-black">
+              <li><Link href="/dashboard" className="hover:underline decoration-4 underline-offset-4">Dashboard</Link></li>
+              <li><Link href="/login" className="hover:underline decoration-4 underline-offset-4">Create Room</Link></li>
+              <li><Link href="/login" className="hover:underline decoration-4 underline-offset-4">Join Room</Link></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-white font-medium mb-6 text-sm">Resources</h4>
-            <ul className="space-y-4 text-sm text-zinc-500">
-              <li><a href="#roadmaps" className="hover:text-white transition-colors">DSA Roadmap</a></li>
-              <li><a href="#roadmaps" className="hover:text-white transition-colors">Flutter Roadmap</a></li>
-              <li><a href="#community" className="hover:text-white transition-colors">Community</a></li>
+            <h4 className="text-black font-black mb-6 text-xl uppercase tracking-wider">Resources</h4>
+            <ul className="space-y-4 text-lg font-bold text-black">
+              <li><a href="#roadmaps" className="hover:underline decoration-4 underline-offset-4">DSA Roadmap</a></li>
+              <li><a href="#roadmaps" className="hover:underline decoration-4 underline-offset-4">Flutter Roadmap</a></li>
+              <li><a href="#community" className="hover:underline decoration-4 underline-offset-4">Community</a></li>
             </ul>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/5 flex justify-center items-center text-xs text-zinc-600 font-light">
+        <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t-[4px] border-black flex justify-between items-center text-sm text-black font-bold uppercase tracking-widest flex-col md:flex-row gap-4">
           <p>© {new Date().getFullYear()} Portline. All rights reserved.</p>
+          <div className="bg-[#c4ff4d] px-4 py-2 brutal-border brutal-shadow-sm font-bitcount">
+            SYSTEM ONLINE
+          </div>
         </div>
       </footer>
     </main>
   );
 }
 
-function FeatureCard({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) {
+function FeatureCard({ icon, title, description, color }: { icon: React.ReactNode, title: string, description: string, color: string }) {
   return (
-    <div className="p-8 rounded-2xl bg-white/1 border border-white/5 hover:bg-white/2 transition-colors">
-      <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mb-6">
+    <div className={`p-8 brutal-border ${color} brutal-shadow hover:-translate-y-2 hover:translate-x-2 transition-transform duration-200`}>
+      <div className="w-16 h-16 brutal-border bg-white flex items-center justify-center mb-8 brutal-shadow-sm">
         {icon}
       </div>
-      <h3 className="text-lg font-medium text-white mb-3">{title}</h3>
-      <p className="text-sm text-zinc-400 leading-relaxed font-light">{description}</p>
+      <h3 className="text-2xl font-black text-black mb-4 uppercase">{title}</h3>
+      <p className="text-lg text-black font-bold leading-relaxed">{description}</p>
     </div>
   );
 }

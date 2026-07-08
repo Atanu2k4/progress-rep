@@ -203,134 +203,136 @@ export default function Dashboard() {
   
   const selectedRoom = rooms.find(r => r.id === selectedRoomId);
 
-  return (
-    <div className="min-h-screen bg-[#0a0a0a] text-zinc-50 font-sans selection:bg-rose-500/30 overflow-hidden relative">
-      
-      {/* Sleek Background Glow */}
-      <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-200 h-125 bg-rose-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+  // Neo brutalist background color palette for rooms
+  const roomColors = ["bg-[#ffb4d4]", "bg-[#94dfff]", "bg-[#c4ff4d]", "bg-[#ffe800]", "bg-[#ff9c9c]"];
 
+  return (
+    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-[#ffb4d4] overflow-hidden relative">
       <div className="p-8 max-w-[1600px] mx-auto relative z-10 h-screen flex flex-col">
         <header className="mb-8 shrink-0">
-          <h1 className="text-4xl font-bitcount font-bold text-white uppercase tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-bitcount font-black text-black uppercase tracking-tight brutal-shadow-sm inline-block bg-[#ffe800] border-[3px] border-black px-4 py-2 transform -rotate-1">
             Welcome back, {user?.displayName?.split(" ")[0] || "there"}
           </h1>
-          <p className="text-zinc-400 mt-2 font-light text-lg">
-            Here's what's happening in your study groups.
+          <p className="text-black mt-4 font-bold text-lg max-w-xl">
+            Here's what's happening in your study groups. Time to crush those goals!
           </p>
         </header>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 flex-1 min-h-0">
           {/* Column 1: Rooms Navigation */}
           <div className="col-span-1 space-y-6 overflow-y-auto pr-2 custom-scrollbar flex flex-col">
-            <h2 className="text-xl font-bitcount font-bold uppercase tracking-widest text-white flex items-center gap-2 shrink-0">
-              <FolderOpen className="w-5 h-5 text-rose-500" />
+            <h2 className="text-xl font-bitcount font-black uppercase tracking-widest text-black flex items-center gap-3 shrink-0 bg-[#c4ff4d] border-[3px] border-black p-2 brutal-shadow-sm self-start">
+              <FolderOpen className="w-5 h-5 text-black" strokeWidth={3} />
               Your Rooms
             </h2>
 
             {loadingRooms ? (
               <div className="space-y-4">
                 {[1, 2, 3].map((i) => (
-                  <div key={i} className="p-5 rounded-2xl bg-white/2 border border-white/5 h-32 animate-pulse backdrop-blur-xl"></div>
+                  <div key={i} className="p-5 bg-white brutal-border h-32 brutal-shadow animate-pulse"></div>
                 ))}
               </div>
             ) : rooms.length === 0 ? (
-              <div className="p-8 text-center rounded-2xl bg-white/2 border border-white/5 border-dashed backdrop-blur-xl">
-                <Users className="w-6 h-6 text-zinc-400 mx-auto mb-3" />
-                <h3 className="text-white font-medium mb-1 text-sm">No active rooms</h3>
+              <div className="p-8 text-center bg-white brutal-border border-dashed brutal-shadow">
+                <Users className="w-8 h-8 text-black mx-auto mb-3" strokeWidth={2.5} />
+                <h3 className="text-black font-black uppercase text-sm">No active rooms</h3>
               </div>
             ) : (
-              <div className="space-y-4">
-                {rooms.map(room => (
-                  <div 
-                    key={room.id} 
-                    onClick={() => setSelectedRoomId(room.id)}
-                    className={`p-5 rounded-2xl border transition-all cursor-pointer relative overflow-hidden backdrop-blur-xl group
-                      ${selectedRoomId === room.id 
-                        ? 'bg-rose-500/10 border-rose-500/50 ring-1 ring-rose-500/20' 
-                        : 'bg-white/2 border-white/5 hover:border-white/10 hover:bg-white/3'
-                      }
-                    `}
-                  >
-                    <div className="flex justify-between items-start mb-4 gap-4">
-                      <div className="flex-1 min-w-0">
-                        <h3 className={`font-bitcount font-bold text-lg uppercase tracking-wide transition-colors flex items-center gap-2 ${selectedRoomId === room.id ? 'text-rose-400' : 'text-white group-hover:text-rose-400'}`}>
-                          {room.name}
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              navigator.clipboard.writeText(room.id);
-                              toast.success("Room code copied!");
-                            }}
-                            className="text-zinc-500 hover:text-white transition-colors p-1 rounded-md hover:bg-white/10 opacity-70 hover:opacity-100 shrink-0"
-                            title="Copy room code"
-                          >
-                            <Copy className="w-3 h-3" />
-                          </button>
-                        </h3>
-                        <p className="text-xs text-zinc-500 mt-1 font-light leading-relaxed">{room.roadmap}</p>
+              <div className="space-y-5 pb-8">
+                {rooms.map((room, idx) => {
+                  const colorClass = roomColors[idx % roomColors.length];
+                  return (
+                    <div 
+                      key={room.id} 
+                      onClick={() => setSelectedRoomId(room.id)}
+                      className={`p-5 brutal-border transition-all cursor-pointer relative group
+                        ${selectedRoomId === room.id 
+                          ? `${colorClass} brutal-shadow transform translate-x-1 -translate-y-1` 
+                          : 'bg-white brutal-shadow-sm hover:translate-x-1 hover:-translate-y-1 hover:brutal-shadow'
+                        }
+                      `}
+                    >
+                      <div className="flex justify-between items-start mb-4 gap-4">
+                        <div className="flex-1 min-w-0">
+                          <h3 className="font-bitcount font-black text-xl uppercase tracking-wide text-black flex items-center gap-2">
+                            {room.name}
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                navigator.clipboard.writeText(room.id);
+                                toast.success("Room code copied!");
+                              }}
+                              className="text-black hover:bg-black hover:text-white p-1 brutal-border transition-colors shrink-0"
+                              title="Copy room code"
+                            >
+                              <Copy className="w-3 h-3" strokeWidth={3} />
+                            </button>
+                          </h3>
+                          <p className="text-sm text-black font-bold mt-1 leading-relaxed">{room.roadmap}</p>
+                        </div>
+                        <button 
+                          onClick={(e) => { e.stopPropagation(); handleDeleteRoom(room.id); }}
+                          className="text-black hover:bg-red-500 hover:text-white p-2 brutal-border transition-colors shrink-0 brutal-shadow-sm active:brutal-shadow-none"
+                          title="Delete Room"
+                        >
+                          <Trash2 className="w-4 h-4" strokeWidth={2.5} />
+                        </button>
                       </div>
-                      <button 
-                        onClick={(e) => { e.stopPropagation(); handleDeleteRoom(room.id); }}
-                        className="text-zinc-600 hover:text-rose-500 transition-colors p-1 rounded-md hover:bg-rose-500/10 shrink-0"
-                        title="Delete Room"
-                      >
-                        <Trash2 className="w-4 h-4" />
-                      </button>
-                    </div>
-                    
-                    <div className="flex items-center justify-between mt-4 border-t border-white/5 pt-4">
-                      <div className="flex items-center -space-x-2.5 group/members relative cursor-help">
-                        {room.members?.slice(0, 4).map((mId, index) => {
-                          const u = usersCache[mId];
-                          return (
-                            <div key={mId} className="w-7 h-7 rounded-full border-2 border-[#121212] bg-zinc-800 flex items-center justify-center overflow-hidden relative hover:z-20 hover:-translate-y-1 transition-transform shadow-md" style={{ zIndex: 10 - index }}>
-                              {u?.photoURL ? (
-                                <img src={u.photoURL} alt="avatar" className="w-full h-full object-cover" />
-                              ) : (
-                                <span className="text-[10px] font-bold text-rose-400 bg-rose-500/10 w-full h-full flex items-center justify-center">
-                                  {u?.displayName?.charAt(0).toUpperCase() || '?'}
-                                </span>
-                              )}
+                      
+                      <div className="flex items-center justify-between mt-4 border-t-[3px] border-black pt-4">
+                        <div className="flex items-center -space-x-2 group/members relative cursor-help">
+                          {room.members?.slice(0, 4).map((mId, index) => {
+                            const u = usersCache[mId];
+                            return (
+                              <div key={mId} className="w-8 h-8 rounded-none brutal-border bg-white flex items-center justify-center overflow-hidden relative hover:z-20 hover:-translate-y-1 transition-transform brutal-shadow-sm" style={{ zIndex: 10 - index }}>
+                                {u?.photoURL ? (
+                                  <img src={u.photoURL} alt="avatar" className="w-full h-full object-cover" />
+                                ) : (
+                                  <span className="text-xs font-black text-black bg-[#94dfff] w-full h-full flex items-center justify-center">
+                                    {u?.displayName?.charAt(0).toUpperCase() || '?'}
+                                  </span>
+                                )}
+                              </div>
+                            )
+                          })}
+                          {(room.members?.length || 0) > 4 && (
+                            <div className="w-8 h-8 rounded-none brutal-border bg-[#ffe800] flex items-center justify-center z-[5] text-xs font-black text-black brutal-shadow-sm">
+                              +{(room.members?.length || 0) - 4}
                             </div>
-                          )
-                        })}
-                        {(room.members?.length || 0) > 4 && (
-                          <div className="w-7 h-7 rounded-full border-2 border-[#121212] bg-zinc-800 flex items-center justify-center z-[5] text-[10px] font-medium text-zinc-400 shadow-md">
-                            +{(room.members?.length || 0) - 4}
-                          </div>
-                        )}
-                        
-                        {/* Tooltip on hover */}
-                        <div className="absolute left-0 bottom-full mb-3 hidden group-hover/members:flex flex-col bg-zinc-900 border border-white/10 rounded-xl p-2 shadow-2xl z-50 w-56 animate-in fade-in slide-in-from-bottom-2">
-                          <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-wider mb-2 px-2 pt-1">Members ({room.members?.length || 0})</div>
-                          <div className="space-y-1 max-h-48 overflow-y-auto custom-scrollbar">
-                            {room.members?.map(mId => {
-                              const u = usersCache[mId];
-                              return (
-                                <div key={mId} className="flex items-center gap-3 p-2 hover:bg-white/5 rounded-lg transition-colors cursor-default">
-                                  {u?.photoURL ? (
-                                    <img src={u.photoURL} alt="avatar" className="w-6 h-6 rounded-full object-cover" />
-                                  ) : (
-                                    <div className="w-6 h-6 rounded-full bg-rose-500/20 text-rose-500 flex items-center justify-center text-[10px] font-bold">
-                                      {u?.displayName?.charAt(0).toUpperCase() || '?'}
-                                    </div>
-                                  )}
-                                  <span className="truncate text-zinc-200 text-sm font-medium">{u?.displayName || 'Loading...'}</span>
-                                </div>
-                              )
-                            })}
+                          )}
+                          
+                          {/* Tooltip on hover */}
+                          <div className="absolute left-0 bottom-full mb-3 hidden group-hover/members:flex flex-col bg-white brutal-border brutal-shadow-lg p-2 z-50 w-56">
+                            <div className="text-xs font-black text-black uppercase tracking-wider mb-2 px-2 pt-1 border-b-[2px] border-black pb-1">Members ({room.members?.length || 0})</div>
+                            <div className="space-y-2 max-h-48 overflow-y-auto custom-scrollbar p-1">
+                              {room.members?.map(mId => {
+                                const u = usersCache[mId];
+                                return (
+                                  <div key={mId} className="flex items-center gap-3 p-2 hover:bg-[#c4ff4d] brutal-border transition-colors cursor-default">
+                                    {u?.photoURL ? (
+                                      <img src={u.photoURL} alt="avatar" className="w-6 h-6 brutal-border object-cover" />
+                                    ) : (
+                                      <div className="w-6 h-6 brutal-border bg-[#ffb4d4] text-black flex items-center justify-center text-[10px] font-black">
+                                        {u?.displayName?.charAt(0).toUpperCase() || '?'}
+                                      </div>
+                                    )}
+                                    <span className="truncate text-black text-sm font-bold uppercase">{u?.displayName || 'Loading...'}</span>
+                                  </div>
+                                )
+                              })}
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  )
+                })}
               </div>
             )}
           </div>
 
           {/* Columns 2 & 3: Main Stage (Roadmap Timeline) */}
-          <div className="col-span-1 lg:col-span-2 flex flex-col h-full min-h-0">
+          <div className="col-span-1 lg:col-span-2 flex flex-col h-[calc(100vh-160px)] min-h-0">
             {selectedRoom ? (
                <RoadmapTimeline 
                  roomId={selectedRoom.id} 
@@ -338,97 +340,105 @@ export default function Dashboard() {
                  usersCache={usersCache}
                />
             ) : (
-              <div className="flex flex-col items-center justify-center h-full bg-white/2 border border-white/5 rounded-2xl backdrop-blur-xl p-12 text-center">
-                <div className="w-16 h-16 rounded-full bg-white/2 border border-white/5 flex items-center justify-center mb-6">
-                  <MousePointerClick className="w-8 h-8 text-zinc-500" />
+              <div className="flex flex-col items-center justify-center h-full bg-white brutal-border brutal-shadow-lg p-12 text-center relative overflow-hidden">
+                {/* Background Pattern */}
+                <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(#000 2px, transparent 2px)", backgroundSize: "20px 20px" }}></div>
+                <div className="w-20 h-20 bg-[#ffe800] brutal-border flex items-center justify-center mb-6 brutal-shadow-sm transform rotate-3">
+                  <MousePointerClick className="w-10 h-10 text-black" strokeWidth={2.5} />
                 </div>
-                <h2 className="text-2xl font-medium text-white mb-2 tracking-tight">Select a room</h2>
-                <p className="text-zinc-400 font-light max-w-sm">Choose a room from the sidebar to view its roadmap timeline and track your progress.</p>
+                <h2 className="text-3xl font-black text-black mb-3 tracking-tight uppercase">Select a room</h2>
+                <p className="text-black font-bold max-w-sm text-lg">Choose a room from the sidebar to view its roadmap timeline and track your progress.</p>
               </div>
             )}
           </div>
 
           {/* Column 4: Activity & Widgets */}
-          <div className="col-span-1 space-y-8 overflow-y-auto pr-2 custom-scrollbar">
+          <div className="col-span-1 space-y-8 overflow-y-auto pr-2 custom-scrollbar pb-10">
             <div>
-              <h2 className="text-xl font-bitcount font-bold uppercase tracking-widest text-white mb-6 flex items-center gap-2">
-                <TrendingUp className="w-5 h-5 text-rose-500" />
+              <h2 className="text-xl font-bitcount font-black uppercase tracking-widest text-black mb-6 flex items-center gap-3 bg-[#ffb4d4] border-[3px] border-black p-2 brutal-shadow-sm self-start inline-flex">
+                <TrendingUp className="w-5 h-5 text-black" strokeWidth={3} />
                 Activity
               </h2>
-              <div className="p-6 rounded-2xl bg-white/2 border border-white/5 backdrop-blur-xl">
-                <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-sm font-medium text-white tracking-wide">{format(currentMonth, "MMMM yyyy")}</h3>
-                  <div className="flex gap-1.5">
-                    <button onClick={handlePreviousMonth} className="p-1 hover:bg-white/10 rounded-md text-zinc-400 hover:text-white transition-colors">
-                      <ChevronLeft className="w-4 h-4" />
-                    </button>
-                    <button onClick={handleNextMonth} className="p-1 hover:bg-white/10 rounded-md text-zinc-400 hover:text-white transition-colors">
-                      <ChevronRight className="w-4 h-4" />
-                    </button>
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-7 gap-2">
-                  {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((d, i) => (
-                    <div key={i} className="text-center text-xs font-medium text-zinc-600 pb-2">
-                      {d}
+              <div className="p-6 bg-white brutal-border brutal-shadow-lg relative overflow-hidden">
+                <div className="absolute -right-4 -top-4 w-24 h-24 bg-[#94dfff] rounded-full blur-2xl opacity-50 z-0"></div>
+                <div className="relative z-10">
+                  <div className="flex items-center justify-between mb-6 border-b-[3px] border-black pb-4">
+                    <h3 className="text-lg font-black text-black tracking-wide uppercase">{format(currentMonth, "MMMM yyyy")}</h3>
+                    <div className="flex gap-2">
+                      <button onClick={handlePreviousMonth} className="p-1.5 brutal-border bg-white hover:bg-[#ffe800] text-black transition-colors brutal-shadow-sm active:brutal-shadow-none">
+                        <ChevronLeft className="w-5 h-5" strokeWidth={3} />
+                      </button>
+                      <button onClick={handleNextMonth} className="p-1.5 brutal-border bg-white hover:bg-[#ffe800] text-black transition-colors brutal-shadow-sm active:brutal-shadow-none">
+                        <ChevronRight className="w-5 h-5" strokeWidth={3} />
+                      </button>
                     </div>
-                  ))}
+                  </div>
                   
-                  {Array.from({ length: calendarDays[0].date.getDay() }).map((_, i) => (
-                    <div key={`empty-${i}`} className="aspect-square"></div>
-                  ))}
-                  
-                  {calendarDays.map((day, i) => {
-                    const isPast = day.date.getTime() < new Date().setHours(0, 0, 0, 0);
-                    return (
-                      <div 
-                        key={i} 
-                        className={`aspect-square rounded flex items-center justify-center text-xs font-medium transition-all duration-300
-                          ${day.isToday ? 'border border-rose-500/50 text-rose-300' : 'text-zinc-500'}
-                          ${day.hasActivity 
-                            ? 'bg-rose-500 text-white shadow-[0_0_12px_rgba(225,29,72,0.5)] scale-105 z-10' 
-                            : 'bg-white/2 hover:bg-white/8 cursor-pointer'
-                          }
-                          ${!day.hasActivity && isPast ? 'line-through opacity-50 decoration-rose-500/50' : ''}
-                        `}
-                        title={format(day.date, "MMM d")}
-                      >
-                        {format(day.date, "d")}
+                  <div className="grid grid-cols-7 gap-2">
+                    {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((d, i) => (
+                      <div key={i} className="text-center text-sm font-black text-black pb-2 border-b-2 border-black/20">
+                        {d}
                       </div>
-                    );
-                  })}
+                    ))}
+                    
+                    {Array.from({ length: calendarDays[0].date.getDay() }).map((_, i) => (
+                      <div key={`empty-${i}`} className="aspect-square border-[2px] border-dashed border-black/10"></div>
+                    ))}
+                    
+                    {calendarDays.map((day, i) => {
+                      const isPast = day.date.getTime() < new Date().setHours(0, 0, 0, 0);
+                      return (
+                        <div 
+                          key={i} 
+                          className={`aspect-square flex items-center justify-center text-sm font-black transition-all duration-150 brutal-border
+                            ${day.isToday ? 'bg-[#ffe800] text-black' : 'text-black bg-white'}
+                            ${day.hasActivity 
+                              ? 'bg-[#c4ff4d] text-black brutal-shadow scale-[1.05] z-10' 
+                              : 'hover:bg-black hover:text-white cursor-pointer shadow-none'
+                            }
+                            ${!day.hasActivity && isPast ? 'opacity-30' : ''}
+                          `}
+                          title={format(day.date, "MMM d")}
+                        >
+                          {format(day.date, "d")}
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
 
             <div>
-              <div className="p-6 rounded-2xl bg-white/2 border border-white/5 backdrop-blur-xl">
-                <h3 className="text-sm font-bitcount font-bold uppercase text-white mb-6 tracking-widest">Upcoming Deadlines</h3>
-                <div className="space-y-5">
-                  {displayDeadlines.length > 0 ? (
-                     displayDeadlines.map((deadline: any, idx) => (
-                       <div key={idx} className="flex items-start gap-4 group">
-                         <div className="w-8 h-8 rounded-full bg-rose-500/10 border border-rose-500/20 flex items-center justify-center shrink-0 group-hover:bg-rose-500/20 transition-colors">
-                           <Clock className="w-4 h-4 text-rose-400" />
+              <div className="p-6 bg-white brutal-border brutal-shadow-lg relative">
+                <div className="absolute -right-4 -bottom-4 w-20 h-20 bg-[#ff9c9c] rounded-full blur-2xl opacity-50 z-0"></div>
+                <div className="relative z-10">
+                  <h3 className="text-lg font-bitcount font-black uppercase text-black mb-6 tracking-widest border-b-[3px] border-black pb-3">Deadlines</h3>
+                  <div className="space-y-4">
+                    {displayDeadlines.length > 0 ? (
+                       displayDeadlines.map((deadline: any, idx) => (
+                         <div key={idx} className={`flex items-start gap-4 p-3 brutal-border ${deadline.isOverdue ? 'bg-[#ff9c9c]' : 'bg-[#94dfff]'}`}>
+                           <div className="w-10 h-10 brutal-border bg-white flex items-center justify-center shrink-0">
+                             <Clock className={`w-5 h-5 ${deadline.isOverdue ? 'text-black' : 'text-black'}`} strokeWidth={3} />
+                           </div>
+                            <div className="flex-1">
+                              <p className="text-sm font-black text-black leading-tight mb-1 uppercase">{deadline.title}</p>
+                              <p className={`text-xs font-bold ${deadline.isOverdue ? 'text-white bg-black px-1 py-0.5 inline-block' : 'text-black'}`}>
+                                {deadline.timeText} in <span className="font-black">{deadline.roomName}</span>
+                              </p>
+                            </div>
                          </div>
-                          <div>
-                            <p className="text-sm font-medium text-white leading-tight mb-1">{deadline.title}</p>
-                            <p className={`text-xs font-light ${deadline.isOverdue ? 'text-rose-400' : 'text-zinc-500'}`}>
-                              {deadline.timeText} in <span className="text-zinc-400 font-medium">{deadline.roomName}</span>
-                            </p>
-                          </div>
-                       </div>
-                     ))
-                  ) : (
-                    <div className="flex flex-col items-center justify-center py-8 text-center">
-                      <div className="w-12 h-12 rounded-full bg-white/2 border border-white/5 flex items-center justify-center mb-3">
-                        <Calendar className="w-5 h-5 text-zinc-600" />
+                       ))
+                    ) : (
+                      <div className="flex flex-col items-center justify-center py-8 text-center brutal-border bg-white border-dashed">
+                        <div className="w-12 h-12 bg-[#ffe800] brutal-border flex items-center justify-center mb-3">
+                          <Calendar className="w-6 h-6 text-black" strokeWidth={2.5} />
+                        </div>
+                        <p className="text-sm font-black text-black uppercase">No immediate deadlines</p>
+                        <p className="text-xs text-black mt-1 font-bold">Check back once you create or join a room.</p>
                       </div>
-                      <p className="text-sm font-medium text-zinc-400">No immediate deadlines</p>
-                      <p className="text-xs text-zinc-600 mt-1 font-light">Check back once you create or join a room.</p>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
