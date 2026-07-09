@@ -208,11 +208,11 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-[125vh] bg-transparent text-foreground font-sans selection:bg-[#ff90e8] overflow-hidden relative">
-      <div className="p-4 sm:p-8 max-w-[1600px] mx-auto relative z-10 h-[125vh] flex flex-col">
+      <div className="p-4 sm:py-8 sm:px-4 w-full relative z-10 h-[125vh] flex flex-col">
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 flex-1 min-h-0">
           {/* Column 1: Rooms Navigation */}
-          <div className="col-span-1 space-y-6 overflow-y-auto pr-2 custom-scrollbar flex flex-col">
+          <div className="col-span-1 space-y-6 overflow-y-auto pr-2 custom-scrollbar flex flex-col w-full max-w-[360px]">
             <h2 className="text-xl font-bitcount font-black uppercase tracking-widest text-black flex items-center gap-3 shrink-0 bg-[#7bf1a8] border-4 border-black p-2 brutal-shadow-sm self-start">
               <FolderOpen className="w-5 h-5 text-black" strokeWidth={3} />
               Your Rooms
@@ -254,7 +254,7 @@ export default function Dashboard() {
                                 navigator.clipboard.writeText(room.id);
                                 toast.success("Room code copied!");
                               }}
-                              className="text-black hover:bg-black hover:text-white p-1 brutal-border transition-colors shrink-0"
+                              className="text-black hover:bg-black hover:text-white p-1 bg-white transition-colors shrink-0"
                               title="Copy room code"
                             >
                               <Copy className="w-3 h-3" strokeWidth={3} />
@@ -264,7 +264,7 @@ export default function Dashboard() {
                         </div>
                         <button 
                           onClick={(e) => { e.stopPropagation(); handleDeleteRoom(room.id); }}
-                          className="text-black hover:bg-red-500 hover:text-white p-2 brutal-border transition-colors shrink-0 brutal-shadow-sm active:brutal-shadow-none"
+                          className="text-black hover:bg-red-500 hover:text-white p-2 bg-white transition-colors shrink-0"
                           title="Delete Room"
                         >
                           <Trash2 className="w-4 h-4" strokeWidth={2.5} />
@@ -272,7 +272,7 @@ export default function Dashboard() {
                       </div>
                       
                       <div className="flex items-center justify-between mt-4 border-t-4 border-black pt-4">
-                        <div className="flex items-center -space-x-2 group/members relative cursor-help">
+                        <div className="flex items-center gap-2 group/members relative cursor-help">
                           {room.members?.slice(0, 4).map((mId, index) => {
                             const u = usersCache[mId];
                             return (
@@ -324,7 +324,7 @@ export default function Dashboard() {
           </div>
 
           {/* Columns 2 & 3: Main Stage (Roadmap Timeline) */}
-          <div className="col-span-1 lg:col-span-2 flex flex-col overflow-y-auto custom-scrollbar pr-2 min-h-0">
+          <div className="col-span-1 lg:col-span-2 flex flex-col overflow-y-auto custom-scrollbar pr-2 min-h-0 mx-auto w-full max-w-[900px]">
             {selectedRoom ? (
                <RoadmapTimeline 
                  roomId={selectedRoom.id} 
@@ -345,7 +345,7 @@ export default function Dashboard() {
           </div>
 
           {/* Column 4: Activity & Widgets */}
-          <div className="col-span-1 space-y-8 overflow-y-auto pr-2 custom-scrollbar pb-10">
+          <div className="col-span-1 space-y-8 overflow-y-auto pr-2 custom-scrollbar pb-10 w-full max-w-[360px] ml-auto">
             <div>
               <h2 className="text-xl font-bitcount font-black uppercase tracking-widest text-black mb-6 flex items-center gap-3 bg-[#ff90e8] border-4 border-black p-2 brutal-shadow-sm self-start inline-flex">
                 <TrendingUp className="w-5 h-5 text-black" strokeWidth={3} />
