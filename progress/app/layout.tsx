@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portline Learning",
+  title: "codepanti Learning",
   description: "Collaborative learning platform",
 };
 
@@ -46,7 +46,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             {children}
-            <Toaster 
+            <Toaster
               position="bottom-right"
               toastOptions={{
                 style: {

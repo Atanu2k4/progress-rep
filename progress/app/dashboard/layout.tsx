@@ -4,9 +4,9 @@ import { useAuth } from "@/context/AuthContext";
 import { useRouter, usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { 
-  LayoutDashboard, 
-  Plus, 
+import {
+  LayoutDashboard,
+  Plus,
   LogOut,
   FolderOpen,
   Settings
@@ -52,21 +52,21 @@ export default function DashboardLayout({
           <div className="w-8 h-8 brutal-border bg-black flex items-center justify-center transform rotate-6">
             <div className="w-3 h-3 bg-[#ffd93d] rounded-none"></div>
           </div>
-          <span className="font-bold text-xl tracking-tight uppercase font-bitcount">Portline</span>
+          <span className="font-bold text-xl tracking-tight uppercase font-bitcount">codepanti</span>
         </div>
 
         <div className="p-4 flex-1 flex flex-col gap-6 overflow-y-auto">
           <div>
             <div className="text-sm font-black text-black uppercase tracking-wider mb-3 px-3">Actions</div>
             <div className="space-y-3">
-              <button 
+              <button
                 onClick={() => setIsCreateModalOpen(true)}
                 className="w-full flex items-center gap-3 px-3 py-3 bg-[#7bf1a8] text-black font-black uppercase tracking-wide brutal-btn"
               >
                 <Plus className="w-5 h-5" strokeWidth={3} />
                 Create Room
               </button>
-              <button 
+              <button
                 onClick={() => setIsJoinModalOpen(true)}
                 className="w-full flex items-center gap-3 px-3 py-3 bg-white text-black font-black uppercase tracking-wide brutal-btn"
               >
@@ -81,22 +81,20 @@ export default function DashboardLayout({
             <nav className="space-y-2">
               <Link
                 href="/dashboard"
-                className={`flex items-center gap-3 px-3 py-3 font-black transition-all uppercase tracking-wide ${
-                  pathname === "/dashboard" 
-                    ? "bg-[#ff90e8] text-black brutal-border brutal-shadow-sm translate-x-1" 
+                className={`flex items-center gap-3 px-3 py-3 font-black transition-all uppercase tracking-wide ${pathname === "/dashboard"
+                    ? "bg-[#ff90e8] text-black brutal-border brutal-shadow-sm translate-x-1"
                     : "text-black hover:bg-[#ff90e8]/30 hover:translate-x-1 brutal-border border-transparent hover:border-black"
-                }`}
+                  }`}
               >
                 <LayoutDashboard className="w-5 h-5" strokeWidth={3} />
                 Overview
               </Link>
               <Link
                 href="/dashboard/settings"
-                className={`flex items-center gap-3 px-3 py-3 font-black transition-all uppercase tracking-wide ${
-                  pathname === "/dashboard/settings" 
-                    ? "bg-[#ff90e8] text-black brutal-border brutal-shadow-sm translate-x-1" 
+                className={`flex items-center gap-3 px-3 py-3 font-black transition-all uppercase tracking-wide ${pathname === "/dashboard/settings"
+                    ? "bg-[#ff90e8] text-black brutal-border brutal-shadow-sm translate-x-1"
                     : "text-black hover:bg-[#ff90e8]/30 hover:translate-x-1 brutal-border border-transparent hover:border-black"
-                }`}
+                  }`}
               >
                 <Settings className="w-5 h-5" strokeWidth={3} />
                 Settings
@@ -119,7 +117,7 @@ export default function DashboardLayout({
               <p className="text-xs text-black font-bold truncate">{user.email}</p>
             </div>
           </div>
-          <button 
+          <button
             onClick={handleLogout}
             className="w-full flex items-center justify-center gap-2 px-3 py-3 bg-white text-black font-black uppercase tracking-wide brutal-btn"
           >
@@ -137,16 +135,16 @@ export default function DashboardLayout({
             <div className="w-8 h-8 brutal-border bg-black flex items-center justify-center transform rotate-6">
               <div className="w-3 h-3 bg-[#ffd93d] rounded-none"></div>
             </div>
-            <span className="font-bold text-lg tracking-tight uppercase font-bitcount">Portline</span>
+            <span className="font-bold text-lg tracking-tight uppercase font-bitcount">codepanti</span>
           </div>
           <div className="flex items-center gap-3">
-            <button 
+            <button
               onClick={() => setIsCreateModalOpen(true)}
               className="p-2 bg-[#7bf1a8] brutal-btn"
             >
               <Plus className="w-5 h-5 text-black" strokeWidth={3} />
             </button>
-            <button 
+            <button
               onClick={() => setIsJoinModalOpen(true)}
               className="p-2 bg-white brutal-btn"
             >
@@ -167,15 +165,15 @@ export default function DashboardLayout({
         </div>
       </main>
 
-      <CreateRoomModal 
-        isOpen={isCreateModalOpen} 
-        onClose={() => setIsCreateModalOpen(false)} 
-        onSuccess={() => {}} 
+      <CreateRoomModal
+        isOpen={isCreateModalOpen}
+        onClose={() => setIsCreateModalOpen(false)}
+        onSuccess={() => { }}
       />
-      <JoinRoomModal 
-        isOpen={isJoinModalOpen} 
-        onClose={() => setIsJoinModalOpen(false)} 
-        onSuccess={() => {}} 
+      <JoinRoomModal
+        isOpen={isJoinModalOpen}
+        onClose={() => setIsJoinModalOpen(false)}
+        onSuccess={() => { }}
       />
     </div>
   );
