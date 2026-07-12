@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { X, BookOpen, Users, Loader2, Link as LinkIcon, Copy, CheckCircle2, Info, Binary, Smartphone } from "lucide-react";
+import { X, BookOpen, Users, Loader2, Link as LinkIcon, Copy, CheckCircle2, Info, Binary, Smartphone, Terminal } from "lucide-react";
 import { db } from "@/lib/firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { useAuth } from "@/context/AuthContext";
@@ -15,7 +15,8 @@ interface CreateRoomModalProps {
 
 const AVAILABLE_ROADMAPS = [
   { id: "dsa-roadmap", title: "Data Structures & Algorithms (C++)", icon: <Binary className="w-6 h-6 text-black" strokeWidth={2.5} /> },
-  { id: "roadmap", title: "Flutter App Development", icon: <Smartphone className="w-6 h-6 text-black" strokeWidth={2.5} /> }
+  { id: "roadmap", title: "Flutter App Development", icon: <Smartphone className="w-6 h-6 text-black" strokeWidth={2.5} /> },
+  { id: "python-roadmap", title: "Python (30 Days)", icon: <Terminal className="w-6 h-6 text-black" strokeWidth={2.5} /> }
 ];
 
 export function CreateRoomModal({ isOpen, onClose, onSuccess }: CreateRoomModalProps) {

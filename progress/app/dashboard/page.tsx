@@ -9,11 +9,13 @@ import { collection, query, where, onSnapshot, doc, deleteDoc, getDoc } from "fi
 import toast from "react-hot-toast";
 import dsaRoadmap from "@/data/dsa-roadmap.json";
 import flutterRoadmap from "@/data/roadmap.json";
+import pythonRoadmap from "@/data/python-roadmap.json";
 import { RoadmapTimeline } from "@/components/RoadmapTimeline";
 
 const roadmaps: Record<string, any[]> = {
   "dsa-roadmap": dsaRoadmap,
-  "roadmap": flutterRoadmap
+  "roadmap": flutterRoadmap,
+  "python-roadmap": pythonRoadmap
 };
 
 interface Room {

@@ -1,0 +1,272 @@
+[
+  {
+    "day": 1,
+    "week": 1,
+    "phase": "Python Basics",
+    "title": "Setup — Python, pip, editor, venv",
+    "topics": [],
+    "practice": "",
+    "isProject": false
+  },
+  {
+    "day": 2,
+    "week": 1,
+    "phase": "Python Basics",
+    "title": "Variables, data types, operators",
+    "topics": [],
+    "practice": "",
+    "isProject": false
+  },
+  {
+    "day": 3,
+    "week": 1,
+    "phase": "Python Basics",
+    "title": "Input/output, comments, indentation",
+    "topics": [],
+    "practice": "",
+    "isProject": false
+  },
+  {
+    "day": 4,
+    "week": 1,
+    "phase": "Python Basics",
+    "title": "if/elif/else",
+    "topics": [],
+    "practice": "",
+    "isProject": false
+  },
+  {
+    "day": 5,
+    "week": 1,
+    "phase": "Python Basics",
+    "title": "for/while loops, break/continue/pass",
+    "topics": [],
+    "practice": "",
+    "isProject": false
+  },
+  {
+    "day": 6,
+    "week": 1,
+    "phase": "Python Basics",
+    "title": "list, tuple",
+    "topics": [],
+    "practice": "",
+    "isProject": false
+  },
+  {
+    "day": 7,
+    "week": 1,
+    "phase": "Python Basics",
+    "title": "dict, set",
+    "topics": [],
+    "practice": "",
+    "isProject": false
+  },
+  {
+    "day": 8,
+    "week": 2,
+    "phase": "Data Structures & Functions",
+    "title": "indexing, slicing, list comprehensions",
+    "topics": [],
+    "practice": "",
+    "isProject": false
+  },
+  {
+    "day": 9,
+    "week": 2,
+    "phase": "Data Structures & Functions",
+    "title": "functions — def, return, args, defaults",
+    "topics": [],
+    "practice": "",
+    "isProject": false
+  },
+  {
+    "day": 10,
+    "week": 2,
+    "phase": "Data Structures & Functions",
+    "title": "*args, **kwargs, scope, lambda, recursion",
+    "topics": [],
+    "practice": "",
+    "isProject": false
+  },
+  {
+    "day": 11,
+    "week": 2,
+    "phase": "Data Structures & Functions",
+    "title": "string methods, f-strings, regex basics",
+    "topics": [],
+    "practice": "",
+    "isProject": false
+  },
+  {
+    "day": 12,
+    "week": 2,
+    "phase": "Data Structures & Functions",
+    "title": "file handling — open, read/write, with",
+    "topics": [],
+    "practice": "",
+    "isProject": false
+  },
+  {
+    "day": 13,
+    "week": 2,
+    "phase": "Data Structures & Functions",
+    "title": "CSV, JSON file handling",
+    "topics": [],
+    "practice": "",
+    "isProject": false
+  },
+  {
+    "day": 14,
+    "week": 2,
+    "phase": "Data Structures & Functions",
+    "title": "Practice — mini project (to-do app using files)",
+    "topics": [],
+    "practice": "Practice — mini project (to-do app using files)",
+    "isProject": true
+  },
+  {
+    "day": 15,
+    "week": 3,
+    "phase": "OOP & Modules",
+    "title": "try/except/finally, raising/custom exceptions",
+    "topics": [],
+    "practice": "",
+    "isProject": false
+  },
+  {
+    "day": 16,
+    "week": 3,
+    "phase": "OOP & Modules",
+    "title": "OOP — classes, objects, init",
+    "topics": [],
+    "practice": "",
+    "isProject": false
+  },
+  {
+    "day": 17,
+    "week": 3,
+    "phase": "OOP & Modules",
+    "title": "instance vs class vars, inheritance",
+    "topics": [],
+    "practice": "",
+    "isProject": false
+  },
+  {
+    "day": 18,
+    "week": 3,
+    "phase": "OOP & Modules",
+    "title": "polymorphism, magic methods, encapsulation",
+    "topics": [],
+    "practice": "",
+    "isProject": false
+  },
+  {
+    "day": 19,
+    "week": 3,
+    "phase": "OOP & Modules",
+    "title": "import, standard library — os, sys, math, random, datetime",
+    "topics": [],
+    "practice": "",
+    "isProject": false
+  },
+  {
+    "day": 20,
+    "week": 3,
+    "phase": "OOP & Modules",
+    "title": "pip, requirements.txt, own modules",
+    "topics": [],
+    "practice": "",
+    "isProject": false
+  },
+  {
+    "day": 21,
+    "week": 3,
+    "phase": "Advanced Concepts & Testing",
+    "title": "map, filter, reduce, decorators",
+    "topics": [],
+    "practice": "",
+    "isProject": false
+  },
+  {
+    "day": 22,
+    "week": 4,
+    "phase": "Advanced Concepts & Testing",
+    "title": "generators, yield, iterators",
+    "topics": [],
+    "practice": "",
+    "isProject": false
+  },
+  {
+    "day": 23,
+    "week": 4,
+    "phase": "Advanced Concepts & Testing",
+    "title": "custom context managers, pdb debugging",
+    "topics": [],
+    "practice": "",
+    "isProject": false
+  },
+  {
+    "day": 24,
+    "week": 4,
+    "phase": "Advanced Concepts & Testing",
+    "title": "requests library, calling APIs",
+    "topics": [],
+    "practice": "",
+    "isProject": false
+  },
+  {
+    "day": 25,
+    "week": 4,
+    "phase": "Advanced Concepts & Testing",
+    "title": "unittest/pytest basics, writing test cases",
+    "topics": [],
+    "practice": "",
+    "isProject": false
+  },
+  {
+    "day": 26,
+    "week": 4,
+    "phase": "Advanced Concepts & Testing",
+    "title": "Practice — write tests for earlier mini projects",
+    "topics": [],
+    "practice": "Practice — write tests for earlier mini projects",
+    "isProject": true
+  },
+  {
+    "day": 27,
+    "week": 4,
+    "phase": "Final Projects",
+    "title": "Project — pick one: calculator, to-do app, web scraper, quiz game, budget tracker (build end to end)",
+    "topics": [],
+    "practice": "Project — pick one: calculator, to-do app, web scraper, quiz game, budget tracker (build end to end)",
+    "isProject": true
+  },
+  {
+    "day": 28,
+    "week": 4,
+    "phase": "Final Projects",
+    "title": "Project — pick one: calculator, to-do app, web scraper, quiz game, budget tracker (build end to end) (Cont.)",
+    "topics": [],
+    "practice": "Project — pick one: calculator, to-do app, web scraper, quiz game, budget tracker (build end to end)",
+    "isProject": true
+  },
+  {
+    "day": 29,
+    "week": 5,
+    "phase": "Final Projects",
+    "title": "Project — pick one: calculator, to-do app, web scraper, quiz game, budget tracker (build end to end) (Cont.)",
+    "topics": [],
+    "practice": "Project — pick one: calculator, to-do app, web scraper, quiz game, budget tracker (build end to end)",
+    "isProject": true
+  },
+  {
+    "day": 30,
+    "week": 5,
+    "phase": "Final Projects",
+    "title": "Project — pick one: calculator, to-do app, web scraper, quiz game, budget tracker (build end to end) (Cont.)",
+    "topics": [],
+    "practice": "Project — pick one: calculator, to-do app, web scraper, quiz game, budget tracker (build end to end)",
+    "isProject": true
+  }
+]

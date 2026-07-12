@@ -7,11 +7,13 @@ import { doc, onSnapshot, setDoc, collection } from "firebase/firestore";
 import { useAuth } from "@/context/AuthContext";
 import dsaRoadmap from "@/data/dsa-roadmap.json";
 import flutterRoadmap from "@/data/roadmap.json";
+import pythonRoadmap from "@/data/python-roadmap.json";
 import toast from "react-hot-toast";
 
 const roadmaps: Record<string, any[]> = {
   "dsa-roadmap": dsaRoadmap,
-  "roadmap": flutterRoadmap
+  "roadmap": flutterRoadmap,
+  "python-roadmap": pythonRoadmap
 };
 
 interface RoadmapTimelineProps {

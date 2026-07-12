@@ -184,7 +184,7 @@ export default function Home() {
             <p className="text-black text-xl font-bold">Curated learning paths designed to take you from beginner to expert in perfect sync with your study group.</p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div className="p-8 brutal-border bg-white brutal-shadow hover:-translate-y-2 hover:translate-x-2 transition-transform duration-200 group cursor-pointer relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF90E8] rounded-full blur-3xl opacity-20 group-hover:opacity-50 transition-opacity"></div>
               <h3 className="text-3xl font-black text-black mb-4 uppercase flex justify-between items-center">
@@ -205,6 +205,18 @@ export default function Home() {
               </h3>
               <p className="text-lg text-black font-bold leading-relaxed mb-8">Build cross-platform mobile, web, and desktop apps with a complete 60-day Flutter and Dart mastery roadmap.</p>
               <Link href="/login" className="inline-flex items-center gap-2 font-black text-black uppercase tracking-widest border-b-4 border-black pb-1 hover:text-[#5EE6A8] hover:border-[#5EE6A8] transition-colors">
+                Start Learning <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+            
+            <div className="p-8 brutal-border bg-white brutal-shadow hover:-translate-y-2 hover:translate-x-2 transition-transform duration-200 group cursor-pointer relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#A3AAFF] rounded-full blur-3xl opacity-20 group-hover:opacity-50 transition-opacity"></div>
+              <h3 className="text-3xl font-black text-black mb-4 uppercase flex justify-between items-center">
+                Python
+                <span className="bg-black text-white text-xs px-3 py-1 brutal-border">30 DAYS</span>
+              </h3>
+              <p className="text-lg text-black font-bold leading-relaxed mb-8">Master Python from scratch to building complete applications. Includes OOP, testing, and full end-to-end projects.</p>
+              <Link href="/login" className="inline-flex items-center gap-2 font-black text-black uppercase tracking-widest border-b-4 border-black pb-1 hover:text-[#A3AAFF] hover:border-[#A3AAFF] transition-colors">
                 Start Learning <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
@@ -270,6 +282,7 @@ export default function Home() {
             <ul className="space-y-4 text-lg font-bold text-black">
               <li><a href="#roadmaps" className="hover:underline decoration-4 underline-offset-4">DSA Roadmap</a></li>
               <li><a href="#roadmaps" className="hover:underline decoration-4 underline-offset-4">Flutter Roadmap</a></li>
+              <li><a href="#roadmaps" className="hover:underline decoration-4 underline-offset-4">Python Roadmap</a></li>
               <li><a href="#community" className="hover:underline decoration-4 underline-offset-4">Community</a></li>
             </ul>
           </div>
