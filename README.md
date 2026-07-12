@@ -1,7 +1,7 @@
 # Codepanti 🚀
 
 <div align="center">
-  <img src="./public/hero.png" alt="Codepanti Hero Section" />
+  <img src="./progress/public/hero.png" alt="Codepanti Hero Section" />
 </div>
 
 Codepanti is a collaborative, multiplayer-first learning platform built specifically for ambitious developers. Instead of learning in isolation, Codepanti transforms studying into a team sport by allowing you to form study groups, follow structured curriculums together, and track everyone's progress in real-time.
@@ -13,7 +13,7 @@ At its core, Codepanti is about accountability and shared growth. It provides cu
 ### Core Features
 
 <div align="center">
-  <img src="./public/roadmaps.png" alt="Codepanti Roadmaps Section" />
+  <img src="./progress/public/roadmaps.png" alt="Codepanti Roadmaps Section" />
 </div>
 
 - **Squad Up (Up to 4 Players):** Form small, focused study groups of up to 4 members. Create a private room, invite your friends, and tackle learning challenges as a dedicated squad.
